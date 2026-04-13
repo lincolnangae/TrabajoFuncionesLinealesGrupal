@@ -54,6 +54,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(635, 557);
 			this->Name = L"Program";
 			this->Text = L"Program";
