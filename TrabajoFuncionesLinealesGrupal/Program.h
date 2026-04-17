@@ -106,21 +106,21 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -219,6 +219,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->panel1->Location = System::Drawing::Point(12, 12);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(910, 739);
@@ -304,6 +305,32 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"HOMOTECIA";
 			// 
+			// button7
+			// 
+			this->button7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->button7->Location = System::Drawing::Point(22, 116);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(201, 30);
+			this->button7->TabIndex = 2;
+			this->button7->Text = L"Aceptar";
+			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(65, 88);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(135, 22);
+			this->textBox3->TabIndex = 7;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(19, 88);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(18, 16);
+			this->label5->TabIndex = 6;
+			this->label5->Text = L"Z:";
+			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(65, 51);
@@ -337,22 +364,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label4->Text = L"Y:";
 			this->label4->Click += gcnew System::EventHandler(this, &Program::label4_Click);
 			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(65, 88);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(135, 22);
-			this->textBox3->TabIndex = 7;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(19, 88);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(18, 16);
-			this->label5->TabIndex = 6;
-			this->label5->Text = L"Z:";
-			// 
 			// groupBox5
 			// 
 			this->groupBox5->Controls->Add(this->button8);
@@ -368,6 +379,16 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->groupBox5->TabIndex = 8;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"ROTACION";
+			// 
+			// button8
+			// 
+			this->button8->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->button8->Location = System::Drawing::Point(22, 116);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(201, 30);
+			this->button8->TabIndex = 8;
+			this->button8->Text = L"Aceptar";
+			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// textBox4
 			// 
@@ -416,26 +437,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label8->Size = System::Drawing::Size(18, 16);
 			this->label8->TabIndex = 2;
 			this->label8->Text = L"X:";
-			// 
-			// button7
-			// 
-			this->button7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->button7->Location = System::Drawing::Point(22, 116);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(201, 30);
-			this->button7->TabIndex = 2;
-			this->button7->Text = L"Aceptar";
-			this->button7->UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			this->button8->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->button8->Location = System::Drawing::Point(22, 116);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(201, 30);
-			this->button8->TabIndex = 8;
-			this->button8->Text = L"Aceptar";
-			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// button9
 			// 
