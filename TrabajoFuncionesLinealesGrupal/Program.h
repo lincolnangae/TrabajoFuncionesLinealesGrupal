@@ -238,9 +238,11 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->panel1->Location = System::Drawing::Point(12, 14);
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel1->Location = System::Drawing::Point(23, 9);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(910, 877);
+			this->panel1->Size = System::Drawing::Size(870, 870);
 			this->panel1->TabIndex = 5;
 			// 
 			// groupBox3
