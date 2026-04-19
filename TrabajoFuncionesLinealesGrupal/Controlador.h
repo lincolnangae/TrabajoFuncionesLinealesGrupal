@@ -19,6 +19,12 @@ public:
 	void AplicarRotacion(float angulo);
 	void SetPuntoCentral(int x, int y);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+	void reflexionX() {
+		PuntoCentralFigura.X = -PuntoCentralFigura.X;
+	}
+	void reflexionY() {
+		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
+	}
 
 	//Aplicacion en Controlador.cpp
 };
