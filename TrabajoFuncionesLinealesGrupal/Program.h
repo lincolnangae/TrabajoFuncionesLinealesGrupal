@@ -35,43 +35,69 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 		}
 	private: System::Windows::Forms::Button^ btnConfirmCord;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::TextBox^ textCoordY;
-	private: System::Windows::Forms::TextBox^ textCoorX;
-	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::Label^ LabelCoordX;
+	private: System::Windows::Forms::Label^ LabelCoordY;
+
+
+	private: System::Windows::Forms::GroupBox^ GroupCoordBox;
+	private: System::Windows::Forms::TextBox^ TextCoordY;
+	private: System::Windows::Forms::TextBox^ TextCoorX;
 
 
 
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::GroupBox^ GroupFigureBox;
+	private: System::Windows::Forms::Button^ ConfirnFigureButton;
+	private: System::Windows::Forms::Panel^ PanelDiagram;
+	private: System::Windows::Forms::ComboBox^ ListFigureCombo;
 
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::GroupBox^ groupBox3;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::GroupBox^ groupBox4;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label3;
 
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::GroupBox^ groupBox5;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Button^ button9;
+
+
+
+
+
+
+	private: System::Windows::Forms::GroupBox^ GroupReflexBox;
+	private: System::Windows::Forms::Button^ ReflexYMXButton;
+	private: System::Windows::Forms::Button^ ReflexOriginButton;
+	private: System::Windows::Forms::Button^ ReflexBiscButton;
+	private: System::Windows::Forms::Button^ ReflexYButton;
+	private: System::Windows::Forms::Button^ ReflexXButton;
+
+
+
+
+
+
+	private: System::Windows::Forms::GroupBox^ GroupScaleBox;
+	private: System::Windows::Forms::TextBox^ TextScaleYPr;
+	private: System::Windows::Forms::TextBox^ TextScaleXPr;
+	private: System::Windows::Forms::Label^ LabelScaleX;
+	private: System::Windows::Forms::Label^ LabelScaleY;
+	private: System::Windows::Forms::Button^ ConfirmScaleButton;
+	private: System::Windows::Forms::GroupBox^ GroupRotateBox;
+	private: System::Windows::Forms::Button^ ConfirmRotateButton;
+	private: System::Windows::Forms::TextBox^ TextRotatePr;
+	private: System::Windows::Forms::Label^ LabelAngle;
+	private: System::Windows::Forms::Button^ ButtonCleanPC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	protected:
 
 	protected:
@@ -91,43 +117,37 @@ namespace TrabajoFuncionesLinealesGrupal {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Program::typeid));
 			this->btnConfirmCord = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->textCoordY = (gcnew System::Windows::Forms::TextBox());
-			this->textCoorX = (gcnew System::Windows::Forms::TextBox());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->groupBox1->SuspendLayout();
-			this->groupBox2->SuspendLayout();
-			this->groupBox3->SuspendLayout();
-			this->groupBox4->SuspendLayout();
-			this->groupBox5->SuspendLayout();
+			this->LabelCoordX = (gcnew System::Windows::Forms::Label());
+			this->LabelCoordY = (gcnew System::Windows::Forms::Label());
+			this->GroupCoordBox = (gcnew System::Windows::Forms::GroupBox());
+			this->TextCoordY = (gcnew System::Windows::Forms::TextBox());
+			this->TextCoorX = (gcnew System::Windows::Forms::TextBox());
+			this->GroupFigureBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ListFigureCombo = (gcnew System::Windows::Forms::ComboBox());
+			this->ConfirnFigureButton = (gcnew System::Windows::Forms::Button());
+			this->PanelDiagram = (gcnew System::Windows::Forms::Panel());
+			this->GroupReflexBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ReflexYMXButton = (gcnew System::Windows::Forms::Button());
+			this->ReflexOriginButton = (gcnew System::Windows::Forms::Button());
+			this->ReflexBiscButton = (gcnew System::Windows::Forms::Button());
+			this->ReflexYButton = (gcnew System::Windows::Forms::Button());
+			this->ReflexXButton = (gcnew System::Windows::Forms::Button());
+			this->GroupScaleBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ConfirmScaleButton = (gcnew System::Windows::Forms::Button());
+			this->TextScaleYPr = (gcnew System::Windows::Forms::TextBox());
+			this->TextScaleXPr = (gcnew System::Windows::Forms::TextBox());
+			this->LabelScaleX = (gcnew System::Windows::Forms::Label());
+			this->LabelScaleY = (gcnew System::Windows::Forms::Label());
+			this->GroupRotateBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ConfirmRotateButton = (gcnew System::Windows::Forms::Button());
+			this->TextRotatePr = (gcnew System::Windows::Forms::TextBox());
+			this->LabelAngle = (gcnew System::Windows::Forms::Label());
+			this->ButtonCleanPC = (gcnew System::Windows::Forms::Button());
+			this->GroupCoordBox->SuspendLayout();
+			this->GroupFigureBox->SuspendLayout();
+			this->GroupReflexBox->SuspendLayout();
+			this->GroupScaleBox->SuspendLayout();
+			this->GroupRotateBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnConfirmCord
@@ -144,375 +164,315 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->btnConfirmCord->Text = L"Crear punto";
 			this->btnConfirmCord->UseVisualStyleBackColor = false;
 			// 
-			// label1
+			// LabelCoordX
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::LightCyan;
-			this->label1->Location = System::Drawing::Point(19, 25);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(21, 19);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"X:";
+			this->LabelCoordX->AutoSize = true;
+			this->LabelCoordX->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelCoordX->Location = System::Drawing::Point(19, 25);
+			this->LabelCoordX->Name = L"LabelCoordX";
+			this->LabelCoordX->Size = System::Drawing::Size(21, 19);
+			this->LabelCoordX->TabIndex = 1;
+			this->LabelCoordX->Text = L"X:";
 			// 
-			// label2
+			// LabelCoordY
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::LightCyan;
-			this->label2->Location = System::Drawing::Point(19, 60);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(21, 19);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"Y:";
+			this->LabelCoordY->AutoSize = true;
+			this->LabelCoordY->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelCoordY->Location = System::Drawing::Point(19, 60);
+			this->LabelCoordY->Name = L"LabelCoordY";
+			this->LabelCoordY->Size = System::Drawing::Size(21, 19);
+			this->LabelCoordY->TabIndex = 2;
+			this->LabelCoordY->Text = L"Y:";
 			// 
-			// groupBox1
+			// GroupCoordBox
 			// 
-			this->groupBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox1.BackgroundImage")));
-			this->groupBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->groupBox1->Controls->Add(this->textCoordY);
-			this->groupBox1->Controls->Add(this->textCoorX);
-			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Controls->Add(this->btnConfirmCord);
-			this->groupBox1->Controls->Add(this->label2);
-			this->groupBox1->Location = System::Drawing::Point(928, 14);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(242, 155);
-			this->groupBox1->TabIndex = 3;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"COORDENADAS";
+			this->GroupCoordBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupCoordBox.BackgroundImage")));
+			this->GroupCoordBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupCoordBox->Controls->Add(this->TextCoordY);
+			this->GroupCoordBox->Controls->Add(this->TextCoorX);
+			this->GroupCoordBox->Controls->Add(this->LabelCoordX);
+			this->GroupCoordBox->Controls->Add(this->btnConfirmCord);
+			this->GroupCoordBox->Controls->Add(this->LabelCoordY);
+			this->GroupCoordBox->Location = System::Drawing::Point(928, 14);
+			this->GroupCoordBox->Name = L"GroupCoordBox";
+			this->GroupCoordBox->Size = System::Drawing::Size(242, 155);
+			this->GroupCoordBox->TabIndex = 3;
+			this->GroupCoordBox->TabStop = false;
+			this->GroupCoordBox->Text = L"COORDENADAS";
 			// 
-			// textCoordY
+			// TextCoordY
 			// 
-			this->textCoordY->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textCoordY->Location = System::Drawing::Point(65, 60);
-			this->textCoordY->Name = L"textCoordY";
-			this->textCoordY->Size = System::Drawing::Size(135, 27);
-			this->textCoordY->TabIndex = 5;
+			this->TextCoordY->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextCoordY->Location = System::Drawing::Point(89, 60);
+			this->TextCoordY->Name = L"TextCoordY";
+			this->TextCoordY->Size = System::Drawing::Size(135, 27);
+			this->TextCoordY->TabIndex = 5;
 			// 
-			// textCoorX
+			// TextCoorX
 			// 
-			this->textCoorX->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textCoorX->Location = System::Drawing::Point(65, 22);
-			this->textCoorX->Name = L"textCoorX";
-			this->textCoorX->Size = System::Drawing::Size(135, 27);
-			this->textCoorX->TabIndex = 4;
+			this->TextCoorX->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextCoorX->Location = System::Drawing::Point(88, 22);
+			this->TextCoorX->Name = L"TextCoorX";
+			this->TextCoorX->Size = System::Drawing::Size(135, 27);
+			this->TextCoorX->TabIndex = 4;
 			// 
-			// groupBox2
+			// GroupFigureBox
 			// 
-			this->groupBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox2.BackgroundImage")));
-			this->groupBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->groupBox2->Controls->Add(this->comboBox1);
-			this->groupBox2->Controls->Add(this->button1);
-			this->groupBox2->Location = System::Drawing::Point(928, 176);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(242, 128);
-			this->groupBox2->TabIndex = 4;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"FiGURAS PREESTABLECIDAS";
+			this->GroupFigureBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupFigureBox.BackgroundImage")));
+			this->GroupFigureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupFigureBox->Controls->Add(this->ListFigureCombo);
+			this->GroupFigureBox->Controls->Add(this->ConfirnFigureButton);
+			this->GroupFigureBox->Location = System::Drawing::Point(928, 176);
+			this->GroupFigureBox->Name = L"GroupFigureBox";
+			this->GroupFigureBox->Size = System::Drawing::Size(242, 128);
+			this->GroupFigureBox->TabIndex = 4;
+			this->GroupFigureBox->TabStop = false;
+			this->GroupFigureBox->Text = L"FiGURAS PREESTABLECIDAS";
 			// 
-			// comboBox1
+			// ListFigureCombo
 			// 
-			this->comboBox1->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(22, 43);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(201, 27);
-			this->comboBox1->TabIndex = 1;
+			this->ListFigureCombo->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ListFigureCombo->FormattingEnabled = true;
+			this->ListFigureCombo->Location = System::Drawing::Point(23, 26);
+			this->ListFigureCombo->Name = L"ListFigureCombo";
+			this->ListFigureCombo->Size = System::Drawing::Size(201, 27);
+			this->ListFigureCombo->TabIndex = 1;
 			// 
-			// button1
+			// ConfirnFigureButton
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->FlatAppearance->BorderSize = 3;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(22, 83);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(201, 35);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Aceptar";
-			this->button1->UseVisualStyleBackColor = false;
+			this->ConfirnFigureButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ConfirnFigureButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirnFigureButton.BackgroundImage")));
+			this->ConfirnFigureButton->FlatAppearance->BorderSize = 3;
+			this->ConfirnFigureButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ConfirnFigureButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ConfirnFigureButton->Location = System::Drawing::Point(22, 75);
+			this->ConfirnFigureButton->Name = L"ConfirnFigureButton";
+			this->ConfirnFigureButton->Size = System::Drawing::Size(201, 35);
+			this->ConfirnFigureButton->TabIndex = 0;
+			this->ConfirnFigureButton->Text = L"Aceptar";
+			this->ConfirnFigureButton->UseVisualStyleBackColor = false;
 			// 
-			// panel1
+			// PanelDiagram
 			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel1->Location = System::Drawing::Point(23, 9);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(870, 870);
-			this->panel1->TabIndex = 5;
+			this->PanelDiagram->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->PanelDiagram->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PanelDiagram.BackgroundImage")));
+			this->PanelDiagram->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->PanelDiagram->Location = System::Drawing::Point(23, 9);
+			this->PanelDiagram->Name = L"PanelDiagram";
+			this->PanelDiagram->Size = System::Drawing::Size(870, 870);
+			this->PanelDiagram->TabIndex = 5;
 			// 
-			// groupBox3
+			// GroupReflexBox
 			// 
-			this->groupBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox3.BackgroundImage")));
-			this->groupBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->groupBox3->Controls->Add(this->button6);
-			this->groupBox3->Controls->Add(this->button4);
-			this->groupBox3->Controls->Add(this->button5);
-			this->groupBox3->Controls->Add(this->button3);
-			this->groupBox3->Controls->Add(this->button2);
-			this->groupBox3->Location = System::Drawing::Point(928, 311);
-			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(242, 155);
-			this->groupBox3->TabIndex = 6;
-			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"REFLEXION";
+			this->GroupReflexBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupReflexBox.BackgroundImage")));
+			this->GroupReflexBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupReflexBox->Controls->Add(this->ReflexYMXButton);
+			this->GroupReflexBox->Controls->Add(this->ReflexOriginButton);
+			this->GroupReflexBox->Controls->Add(this->ReflexBiscButton);
+			this->GroupReflexBox->Controls->Add(this->ReflexYButton);
+			this->GroupReflexBox->Controls->Add(this->ReflexXButton);
+			this->GroupReflexBox->Location = System::Drawing::Point(928, 311);
+			this->GroupReflexBox->Name = L"GroupReflexBox";
+			this->GroupReflexBox->Size = System::Drawing::Size(242, 155);
+			this->GroupReflexBox->TabIndex = 6;
+			this->GroupReflexBox->TabStop = false;
+			this->GroupReflexBox->Text = L"REFLEXION";
 			// 
-			// button6
+			// ReflexYMXButton
 			// 
-			this->button6->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.BackgroundImage")));
-			this->button6->FlatAppearance->BorderSize = 3;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button6->Location = System::Drawing::Point(65, 111);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(113, 35);
-			this->button6->TabIndex = 7;
-			this->button6->Text = L"Y = -X";
-			this->button6->UseVisualStyleBackColor = false;
+			this->ReflexYMXButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ReflexYMXButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexYMXButton.BackgroundImage")));
+			this->ReflexYMXButton->FlatAppearance->BorderSize = 3;
+			this->ReflexYMXButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ReflexYMXButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ReflexYMXButton->Location = System::Drawing::Point(65, 111);
+			this->ReflexYMXButton->Name = L"ReflexYMXButton";
+			this->ReflexYMXButton->Size = System::Drawing::Size(113, 35);
+			this->ReflexYMXButton->TabIndex = 7;
+			this->ReflexYMXButton->Text = L"Y = -X";
+			this->ReflexYMXButton->UseVisualStyleBackColor = false;
 			// 
-			// button4
+			// ReflexOriginButton
 			// 
-			this->button4->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
-			this->button4->FlatAppearance->BorderSize = 3;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button4->Location = System::Drawing::Point(123, 68);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(113, 35);
-			this->button4->TabIndex = 5;
-			this->button4->Text = L"Origen";
-			this->button4->UseVisualStyleBackColor = false;
+			this->ReflexOriginButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ReflexOriginButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexOriginButton.BackgroundImage")));
+			this->ReflexOriginButton->FlatAppearance->BorderSize = 3;
+			this->ReflexOriginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ReflexOriginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ReflexOriginButton->Location = System::Drawing::Point(123, 68);
+			this->ReflexOriginButton->Name = L"ReflexOriginButton";
+			this->ReflexOriginButton->Size = System::Drawing::Size(113, 35);
+			this->ReflexOriginButton->TabIndex = 5;
+			this->ReflexOriginButton->Text = L"Origen";
+			this->ReflexOriginButton->UseVisualStyleBackColor = false;
 			// 
-			// button5
+			// ReflexBiscButton
 			// 
-			this->button5->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.BackgroundImage")));
-			this->button5->FlatAppearance->BorderSize = 3;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button5->Location = System::Drawing::Point(6, 68);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(113, 35);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"Bisectriz";
-			this->button5->UseVisualStyleBackColor = false;
+			this->ReflexBiscButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ReflexBiscButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexBiscButton.BackgroundImage")));
+			this->ReflexBiscButton->FlatAppearance->BorderSize = 3;
+			this->ReflexBiscButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ReflexBiscButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ReflexBiscButton->Location = System::Drawing::Point(6, 68);
+			this->ReflexBiscButton->Name = L"ReflexBiscButton";
+			this->ReflexBiscButton->Size = System::Drawing::Size(113, 35);
+			this->ReflexBiscButton->TabIndex = 4;
+			this->ReflexBiscButton->Text = L"Bisectriz";
+			this->ReflexBiscButton->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// ReflexYButton
 			// 
-			this->button3->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
-			this->button3->FlatAppearance->BorderSize = 3;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button3->Location = System::Drawing::Point(123, 25);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(113, 35);
-			this->button3->TabIndex = 3;
-			this->button3->Text = L"Eje Y";
-			this->button3->UseVisualStyleBackColor = false;
+			this->ReflexYButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ReflexYButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexYButton.BackgroundImage")));
+			this->ReflexYButton->FlatAppearance->BorderSize = 3;
+			this->ReflexYButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ReflexYButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ReflexYButton->Location = System::Drawing::Point(123, 25);
+			this->ReflexYButton->Name = L"ReflexYButton";
+			this->ReflexYButton->Size = System::Drawing::Size(113, 35);
+			this->ReflexYButton->TabIndex = 3;
+			this->ReflexYButton->Text = L"Eje Y";
+			this->ReflexYButton->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// ReflexXButton
 			// 
-			this->button2->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
-			this->button2->FlatAppearance->BorderSize = 3;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button2->Location = System::Drawing::Point(6, 25);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(113, 35);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Eje X";
-			this->button2->UseVisualStyleBackColor = false;
+			this->ReflexXButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ReflexXButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexXButton.BackgroundImage")));
+			this->ReflexXButton->FlatAppearance->BorderSize = 3;
+			this->ReflexXButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ReflexXButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ReflexXButton->Location = System::Drawing::Point(6, 25);
+			this->ReflexXButton->Name = L"ReflexXButton";
+			this->ReflexXButton->Size = System::Drawing::Size(113, 35);
+			this->ReflexXButton->TabIndex = 2;
+			this->ReflexXButton->Text = L"Eje X";
+			this->ReflexXButton->UseVisualStyleBackColor = false;
 			// 
-			// groupBox4
+			// GroupScaleBox
 			// 
-			this->groupBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox4.BackgroundImage")));
-			this->groupBox4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->groupBox4->Controls->Add(this->button7);
-			this->groupBox4->Controls->Add(this->textBox3);
-			this->groupBox4->Controls->Add(this->label5);
-			this->groupBox4->Controls->Add(this->textBox1);
-			this->groupBox4->Controls->Add(this->textBox2);
-			this->groupBox4->Controls->Add(this->label3);
-			this->groupBox4->Controls->Add(this->label4);
-			this->groupBox4->Location = System::Drawing::Point(928, 474);
-			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(242, 183);
-			this->groupBox4->TabIndex = 7;
-			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"HOMOTECIA";
+			this->GroupScaleBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupScaleBox.BackgroundImage")));
+			this->GroupScaleBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupScaleBox->Controls->Add(this->ConfirmScaleButton);
+			this->GroupScaleBox->Controls->Add(this->TextScaleYPr);
+			this->GroupScaleBox->Controls->Add(this->TextScaleXPr);
+			this->GroupScaleBox->Controls->Add(this->LabelScaleX);
+			this->GroupScaleBox->Controls->Add(this->LabelScaleY);
+			this->GroupScaleBox->Location = System::Drawing::Point(928, 474);
+			this->GroupScaleBox->Name = L"GroupScaleBox";
+			this->GroupScaleBox->Size = System::Drawing::Size(242, 157);
+			this->GroupScaleBox->TabIndex = 7;
+			this->GroupScaleBox->TabStop = false;
+			this->GroupScaleBox->Text = L"HOMOTECIA";
 			// 
-			// button7
+			// ConfirmScaleButton
 			// 
-			this->button7->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.BackgroundImage")));
-			this->button7->FlatAppearance->BorderSize = 3;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button7->Location = System::Drawing::Point(22, 138);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(201, 35);
-			this->button7->TabIndex = 2;
-			this->button7->Text = L"Aceptar";
-			this->button7->UseVisualStyleBackColor = false;
+			this->ConfirmScaleButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ConfirmScaleButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmScaleButton.BackgroundImage")));
+			this->ConfirmScaleButton->FlatAppearance->BorderSize = 3;
+			this->ConfirmScaleButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ConfirmScaleButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ConfirmScaleButton->Location = System::Drawing::Point(23, 103);
+			this->ConfirmScaleButton->Name = L"ConfirmScaleButton";
+			this->ConfirmScaleButton->Size = System::Drawing::Size(201, 35);
+			this->ConfirmScaleButton->TabIndex = 2;
+			this->ConfirmScaleButton->Text = L"Aceptar";
+			this->ConfirmScaleButton->UseVisualStyleBackColor = false;
 			// 
-			// textBox3
+			// TextScaleYPr
 			// 
-			this->textBox3->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox3->Location = System::Drawing::Point(65, 104);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(135, 27);
-			this->textBox3->TabIndex = 7;
+			this->TextScaleYPr->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextScaleYPr->Location = System::Drawing::Point(88, 61);
+			this->TextScaleYPr->Name = L"TextScaleYPr";
+			this->TextScaleYPr->Size = System::Drawing::Size(135, 27);
+			this->TextScaleYPr->TabIndex = 5;
 			// 
-			// label5
+			// TextScaleXPr
 			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::LightCyan;
-			this->label5->Location = System::Drawing::Point(19, 104);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(21, 19);
-			this->label5->TabIndex = 6;
-			this->label5->Text = L"Z:";
+			this->TextScaleXPr->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextScaleXPr->Location = System::Drawing::Point(88, 22);
+			this->TextScaleXPr->Name = L"TextScaleXPr";
+			this->TextScaleXPr->Size = System::Drawing::Size(135, 27);
+			this->TextScaleXPr->TabIndex = 4;
 			// 
-			// textBox1
+			// LabelScaleX
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox1->Location = System::Drawing::Point(65, 60);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(135, 27);
-			this->textBox1->TabIndex = 5;
+			this->LabelScaleX->AutoSize = true;
+			this->LabelScaleX->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelScaleX->Location = System::Drawing::Point(19, 25);
+			this->LabelScaleX->Name = L"LabelScaleX";
+			this->LabelScaleX->Size = System::Drawing::Size(21, 19);
+			this->LabelScaleX->TabIndex = 1;
+			this->LabelScaleX->Text = L"X:";
 			// 
-			// textBox2
+			// LabelScaleY
 			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox2->Location = System::Drawing::Point(65, 22);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(135, 27);
-			this->textBox2->TabIndex = 4;
+			this->LabelScaleY->AutoSize = true;
+			this->LabelScaleY->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelScaleY->Location = System::Drawing::Point(19, 64);
+			this->LabelScaleY->Name = L"LabelScaleY";
+			this->LabelScaleY->Size = System::Drawing::Size(21, 19);
+			this->LabelScaleY->TabIndex = 2;
+			this->LabelScaleY->Text = L"Y:";
 			// 
-			// label3
+			// GroupRotateBox
 			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::LightCyan;
-			this->label3->Location = System::Drawing::Point(19, 25);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(21, 19);
-			this->label3->TabIndex = 1;
-			this->label3->Text = L"X:";
+			this->GroupRotateBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupRotateBox.BackgroundImage")));
+			this->GroupRotateBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupRotateBox->Controls->Add(this->ConfirmRotateButton);
+			this->GroupRotateBox->Controls->Add(this->TextRotatePr);
+			this->GroupRotateBox->Controls->Add(this->LabelAngle);
+			this->GroupRotateBox->Location = System::Drawing::Point(928, 648);
+			this->GroupRotateBox->Name = L"GroupRotateBox";
+			this->GroupRotateBox->Size = System::Drawing::Size(242, 130);
+			this->GroupRotateBox->TabIndex = 8;
+			this->GroupRotateBox->TabStop = false;
+			this->GroupRotateBox->Text = L"ROTACION";
 			// 
-			// label4
+			// ConfirmRotateButton
 			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::LightCyan;
-			this->label4->Location = System::Drawing::Point(19, 64);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(21, 19);
-			this->label4->TabIndex = 2;
-			this->label4->Text = L"Y:";
+			this->ConfirmRotateButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ConfirmRotateButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmRotateButton.BackgroundImage")));
+			this->ConfirmRotateButton->FlatAppearance->BorderSize = 3;
+			this->ConfirmRotateButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ConfirmRotateButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ConfirmRotateButton->Location = System::Drawing::Point(22, 72);
+			this->ConfirmRotateButton->Name = L"ConfirmRotateButton";
+			this->ConfirmRotateButton->Size = System::Drawing::Size(201, 35);
+			this->ConfirmRotateButton->TabIndex = 8;
+			this->ConfirmRotateButton->Text = L"Aceptar";
+			this->ConfirmRotateButton->UseVisualStyleBackColor = false;
 			// 
-			// groupBox5
+			// TextRotatePr
 			// 
-			this->groupBox5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox5.BackgroundImage")));
-			this->groupBox5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->groupBox5->Controls->Add(this->button8);
-			this->groupBox5->Controls->Add(this->textBox4);
-			this->groupBox5->Controls->Add(this->label6);
-			this->groupBox5->Controls->Add(this->textBox5);
-			this->groupBox5->Controls->Add(this->textBox6);
-			this->groupBox5->Controls->Add(this->label7);
-			this->groupBox5->Controls->Add(this->label8);
-			this->groupBox5->Location = System::Drawing::Point(928, 664);
-			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(242, 180);
-			this->groupBox5->TabIndex = 8;
-			this->groupBox5->TabStop = false;
-			this->groupBox5->Text = L"ROTACION";
+			this->TextRotatePr->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextRotatePr->Location = System::Drawing::Point(89, 26);
+			this->TextRotatePr->Name = L"TextRotatePr";
+			this->TextRotatePr->Size = System::Drawing::Size(135, 27);
+			this->TextRotatePr->TabIndex = 4;
 			// 
-			// button8
+			// LabelAngle
 			// 
-			this->button8->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
-			this->button8->FlatAppearance->BorderSize = 3;
-			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button8->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button8->Location = System::Drawing::Point(22, 138);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(201, 35);
-			this->button8->TabIndex = 8;
-			this->button8->Text = L"Aceptar";
-			this->button8->UseVisualStyleBackColor = false;
+			this->LabelAngle->AutoSize = true;
+			this->LabelAngle->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelAngle->Location = System::Drawing::Point(19, 30);
+			this->LabelAngle->Name = L"LabelAngle";
+			this->LabelAngle->Size = System::Drawing::Size(57, 19);
+			this->LabelAngle->TabIndex = 1;
+			this->LabelAngle->Text = L"Angulo:";
 			// 
-			// textBox4
+			// ButtonCleanPC
 			// 
-			this->textBox4->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox4->Location = System::Drawing::Point(65, 104);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(135, 27);
-			this->textBox4->TabIndex = 7;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::LightCyan;
-			this->label6->Location = System::Drawing::Point(19, 104);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(21, 19);
-			this->label6->TabIndex = 6;
-			this->label6->Text = L"Y:";
-			// 
-			// textBox5
-			// 
-			this->textBox5->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox5->Location = System::Drawing::Point(65, 60);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(135, 27);
-			this->textBox5->TabIndex = 5;
-			// 
-			// textBox6
-			// 
-			this->textBox6->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox6->Location = System::Drawing::Point(65, 22);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(135, 27);
-			this->textBox6->TabIndex = 4;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::LightCyan;
-			this->label7->Location = System::Drawing::Point(7, 25);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(57, 19);
-			this->label7->TabIndex = 1;
-			this->label7->Text = L"Angulo:";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::LightCyan;
-			this->label8->Location = System::Drawing::Point(19, 64);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(21, 19);
-			this->label8->TabIndex = 2;
-			this->label8->Text = L"X:";
-			// 
-			// button9
-			// 
-			this->button9->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button9.BackgroundImage")));
-			this->button9->FlatAppearance->BorderSize = 3;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button9->Location = System::Drawing::Point(934, 852);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(236, 35);
-			this->button9->TabIndex = 9;
-			this->button9->Text = L"Regresar";
-			this->button9->UseVisualStyleBackColor = false;
+			this->ButtonCleanPC->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ButtonCleanPC->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonCleanPC.BackgroundImage")));
+			this->ButtonCleanPC->FlatAppearance->BorderSize = 3;
+			this->ButtonCleanPC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ButtonCleanPC->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ButtonCleanPC->Location = System::Drawing::Point(928, 799);
+			this->ButtonCleanPC->Name = L"ButtonCleanPC";
+			this->ButtonCleanPC->Size = System::Drawing::Size(236, 49);
+			this->ButtonCleanPC->TabIndex = 9;
+			this->ButtonCleanPC->Text = L"Limpiar";
+			this->ButtonCleanPC->UseVisualStyleBackColor = false;
 			// 
 			// Program
 			// 
@@ -522,30 +482,31 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1182, 891);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->groupBox5);
-			this->Controls->Add(this->groupBox4);
-			this->Controls->Add(this->groupBox3);
-			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->ButtonCleanPC);
+			this->Controls->Add(this->GroupRotateBox);
+			this->Controls->Add(this->GroupScaleBox);
+			this->Controls->Add(this->GroupReflexBox);
+			this->Controls->Add(this->PanelDiagram);
+			this->Controls->Add(this->GroupFigureBox);
+			this->Controls->Add(this->GroupCoordBox);
 			this->DoubleBuffered = true;
 			this->Font = (gcnew System::Drawing::Font(L"Source Han Sans CN Bold", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Program";
 			this->Text = L"Program";
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			this->groupBox2->ResumeLayout(false);
-			this->groupBox3->ResumeLayout(false);
-			this->groupBox4->ResumeLayout(false);
-			this->groupBox4->PerformLayout();
-			this->groupBox5->ResumeLayout(false);
-			this->groupBox5->PerformLayout();
+			this->GroupCoordBox->ResumeLayout(false);
+			this->GroupCoordBox->PerformLayout();
+			this->GroupFigureBox->ResumeLayout(false);
+			this->GroupReflexBox->ResumeLayout(false);
+			this->GroupScaleBox->ResumeLayout(false);
+			this->GroupScaleBox->PerformLayout();
+			this->GroupRotateBox->ResumeLayout(false);
+			this->GroupRotateBox->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+
 };
 }
