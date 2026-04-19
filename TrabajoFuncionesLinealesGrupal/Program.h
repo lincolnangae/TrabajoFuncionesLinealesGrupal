@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Controlador.h"
 namespace TrabajoFuncionesLinealesGrupal {
 
 	using namespace System;
@@ -14,6 +14,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 	/// </summary>
 	public ref class Program : public System::Windows::Forms::Form
 	{
+	private:
+		Controlador^ ObjControlador;
+
 	public:
 		Program(void)
 		{
@@ -21,6 +24,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			//
 			//TODO: Add the constructor code here
 			//
+			ObjControlador = gcnew Controlador();
 		}
 
 	protected:
@@ -80,6 +84,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 	private: System::Windows::Forms::TextBox^ TextRotatePr;
 	private: System::Windows::Forms::Label^ LabelAngle;
 	private: System::Windows::Forms::Button^ ButtonCleanPC;
+	private: System::Windows::Forms::Label^ LabelPointAct;
 
 
 
@@ -143,6 +148,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextRotatePr = (gcnew System::Windows::Forms::TextBox());
 			this->LabelAngle = (gcnew System::Windows::Forms::Label());
 			this->ButtonCleanPC = (gcnew System::Windows::Forms::Button());
+			this->LabelPointAct = (gcnew System::Windows::Forms::Label());
 			this->GroupCoordBox->SuspendLayout();
 			this->GroupFigureBox->SuspendLayout();
 			this->GroupReflexBox->SuspendLayout();
@@ -163,6 +169,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->btnConfirmCord->TabIndex = 0;
 			this->btnConfirmCord->Text = L"Crear punto";
 			this->btnConfirmCord->UseVisualStyleBackColor = false;
+			this->btnConfirmCord->Click += gcnew System::EventHandler(this, &Program::btnConfirmCord_Click);
 			// 
 			// LabelCoordX
 			// 
@@ -193,7 +200,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupCoordBox->Controls->Add(this->LabelCoordX);
 			this->GroupCoordBox->Controls->Add(this->btnConfirmCord);
 			this->GroupCoordBox->Controls->Add(this->LabelCoordY);
-			this->GroupCoordBox->Location = System::Drawing::Point(928, 14);
+			this->GroupCoordBox->Location = System::Drawing::Point(928, 90);
 			this->GroupCoordBox->Name = L"GroupCoordBox";
 			this->GroupCoordBox->Size = System::Drawing::Size(242, 155);
 			this->GroupCoordBox->TabIndex = 3;
@@ -222,7 +229,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupFigureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->GroupFigureBox->Controls->Add(this->ListFigureCombo);
 			this->GroupFigureBox->Controls->Add(this->ConfirnFigureButton);
-			this->GroupFigureBox->Location = System::Drawing::Point(928, 176);
+			this->GroupFigureBox->Location = System::Drawing::Point(928, 251);
 			this->GroupFigureBox->Name = L"GroupFigureBox";
 			this->GroupFigureBox->Size = System::Drawing::Size(242, 128);
 			this->GroupFigureBox->TabIndex = 4;
@@ -255,12 +262,12 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// PanelDiagram
 			// 
 			this->PanelDiagram->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->PanelDiagram->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PanelDiagram.BackgroundImage")));
 			this->PanelDiagram->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->PanelDiagram->Location = System::Drawing::Point(23, 9);
 			this->PanelDiagram->Name = L"PanelDiagram";
 			this->PanelDiagram->Size = System::Drawing::Size(870, 870);
 			this->PanelDiagram->TabIndex = 5;
+			this->PanelDiagram->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Program::PanelDiagram_Paint);
 			// 
 			// GroupReflexBox
 			// 
@@ -271,7 +278,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->Controls->Add(this->ReflexBiscButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexYButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexXButton);
-			this->GroupReflexBox->Location = System::Drawing::Point(928, 311);
+			this->GroupReflexBox->Location = System::Drawing::Point(928, 385);
 			this->GroupReflexBox->Name = L"GroupReflexBox";
 			this->GroupReflexBox->Size = System::Drawing::Size(242, 155);
 			this->GroupReflexBox->TabIndex = 6;
@@ -358,7 +365,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupScaleBox->Controls->Add(this->TextScaleXPr);
 			this->GroupScaleBox->Controls->Add(this->LabelScaleX);
 			this->GroupScaleBox->Controls->Add(this->LabelScaleY);
-			this->GroupScaleBox->Location = System::Drawing::Point(928, 474);
+			this->GroupScaleBox->Location = System::Drawing::Point(928, 546);
 			this->GroupScaleBox->Name = L"GroupScaleBox";
 			this->GroupScaleBox->Size = System::Drawing::Size(242, 157);
 			this->GroupScaleBox->TabIndex = 7;
@@ -423,7 +430,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupRotateBox->Controls->Add(this->ConfirmRotateButton);
 			this->GroupRotateBox->Controls->Add(this->TextRotatePr);
 			this->GroupRotateBox->Controls->Add(this->LabelAngle);
-			this->GroupRotateBox->Location = System::Drawing::Point(928, 648);
+			this->GroupRotateBox->Location = System::Drawing::Point(928, 709);
 			this->GroupRotateBox->Name = L"GroupRotateBox";
 			this->GroupRotateBox->Size = System::Drawing::Size(242, 130);
 			this->GroupRotateBox->TabIndex = 8;
@@ -470,12 +477,24 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ButtonCleanPC->FlatAppearance->BorderSize = 3;
 			this->ButtonCleanPC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonCleanPC->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ButtonCleanPC->Location = System::Drawing::Point(928, 799);
+			this->ButtonCleanPC->Location = System::Drawing::Point(928, 845);
 			this->ButtonCleanPC->Name = L"ButtonCleanPC";
-			this->ButtonCleanPC->Size = System::Drawing::Size(236, 49);
+			this->ButtonCleanPC->Size = System::Drawing::Size(242, 34);
 			this->ButtonCleanPC->TabIndex = 9;
 			this->ButtonCleanPC->Text = L"Limpiar";
 			this->ButtonCleanPC->UseVisualStyleBackColor = false;
+			// 
+			// LabelPointAct
+			// 
+			this->LabelPointAct->AutoSize = true;
+			this->LabelPointAct->BackColor = System::Drawing::Color::Azure;
+			this->LabelPointAct->Font = (gcnew System::Drawing::Font(L"Source Han Sans CN Bold", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->LabelPointAct->Location = System::Drawing::Point(946, 36);
+			this->LabelPointAct->Name = L"LabelPointAct";
+			this->LabelPointAct->Size = System::Drawing::Size(118, 20);
+			this->LabelPointAct->TabIndex = 6;
+			this->LabelPointAct->Text = L"SIN REGISTROS";
 			// 
 			// Program
 			// 
@@ -484,7 +503,8 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1182, 891);
+			this->ClientSize = System::Drawing::Size(1184, 891);
+			this->Controls->Add(this->LabelPointAct);
 			this->Controls->Add(this->ButtonCleanPC);
 			this->Controls->Add(this->GroupRotateBox);
 			this->Controls->Add(this->GroupScaleBox);
@@ -498,6 +518,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Program";
 			this->Text = L"Program";
+			this->Load += gcnew System::EventHandler(this, &Program::Program_Load);
 			this->GroupCoordBox->ResumeLayout(false);
 			this->GroupCoordBox->PerformLayout();
 			this->GroupFigureBox->ResumeLayout(false);
@@ -507,9 +528,65 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupRotateBox->ResumeLayout(false);
 			this->GroupRotateBox->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 
+		private: System::Void btnConfirmCord_Click(System::Object^ sender, System::EventArgs^ e) {
+
+			if (TextCoorX->Text->Trim()->Length == 0 || TextCoordY->Text->Trim()->Length == 0) {
+				MessageBox::Show(L"Por favor, complete ambos campos de coordenadas.", L"Error de Entrada", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+
+			try {
+				int x = System::Convert::ToInt32(TextCoorX->Text);
+				int y = System::Convert::ToInt32(TextCoordY->Text);
+
+				int limite = 430;
+
+				if (Math::Abs(x) > limite || Math::Abs(y) > limite) {
+					MessageBox::Show(L"Coordenada fuera de rango.\nIngrese valores entre -" + limite + L" y " + limite + L".",
+						L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+
+				ObjControlador->SetPuntoCentral(x, y);
+
+				LabelPointAct->Text = L"Punto actual: (" + x + L", " + y + L")";
+
+				PanelDiagram->Invalidate();
+
+			}
+			//Errores posibles al poner una coordenada
+			catch (System::FormatException^) {
+				MessageBox::Show(L"Entrada no válida. Por favor, use solo números enteros.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			catch (System::OverflowException^) {
+				MessageBox::Show(L"El número ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+
+
+		private: System::Void PanelDiagram_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			Graphics^ g = e->Graphics;
+
+			// Dibujo de ejes
+			int cX = PanelDiagram->Width / 2;
+			int cY = PanelDiagram->Height / 2;
+			Pen^ pEjes = gcnew Pen(Color::LightGray, 1);
+			g->DrawLine(pEjes, cX, 0, cX, PanelDiagram->Height);
+			g->DrawLine(pEjes, 0, cY, PanelDiagram->Width, cY);
+
+			//Dibujo general
+			if (ObjControlador != nullptr) {
+				ObjControlador->DibujarTodo(g, cX, cY);
+			}
+		}
+
+
+		private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
+		}
 };
 }
