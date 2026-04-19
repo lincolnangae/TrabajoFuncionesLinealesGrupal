@@ -277,6 +277,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->TabIndex = 6;
 			this->GroupReflexBox->TabStop = false;
 			this->GroupReflexBox->Text = L"REFLEXION";
+			this->GroupReflexBox->Visible = false;
 			// 
 			// ReflexYMXButton
 			// 
@@ -363,6 +364,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupScaleBox->TabIndex = 7;
 			this->GroupScaleBox->TabStop = false;
 			this->GroupScaleBox->Text = L"HOMOTECIA";
+			this->GroupScaleBox->Visible = false;
 			// 
 			// ConfirmScaleButton
 			// 
@@ -427,6 +429,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupRotateBox->TabIndex = 8;
 			this->GroupRotateBox->TabStop = false;
 			this->GroupRotateBox->Text = L"ROTACION";
+			this->GroupRotateBox->Visible = false;
 			// 
 			// ConfirmRotateButton
 			// 
