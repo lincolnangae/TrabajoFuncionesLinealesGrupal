@@ -153,7 +153,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label1->Size = System::Drawing::Size(21, 19);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"X:";
-			this->label1->Click += gcnew System::EventHandler(this, &Program::label1_Click);
 			// 
 			// label2
 			// 
@@ -180,7 +179,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"COORDENADAS";
-			this->groupBox1->Enter += gcnew System::EventHandler(this, &Program::groupBox1_Enter);
 			// 
 			// textCoordY
 			// 
@@ -197,7 +195,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->textCoorX->Name = L"textCoorX";
 			this->textCoorX->Size = System::Drawing::Size(135, 27);
 			this->textCoorX->TabIndex = 4;
-			this->textCoorX->TextChanged += gcnew System::EventHandler(this, &Program::textCoorX_TextChanged);
 			// 
 			// groupBox2
 			// 
@@ -416,7 +413,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label4->Size = System::Drawing::Size(21, 19);
 			this->label4->TabIndex = 2;
 			this->label4->Text = L"Y:";
-			this->label4->Click += gcnew System::EventHandler(this, &Program::label4_Click);
 			// 
 			// groupBox5
 			// 
@@ -551,15 +547,5 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textCoorX_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
