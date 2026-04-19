@@ -11,6 +11,8 @@ void Controlador::SetPuntoCentral(int x, int y) {
     PuntoCentralFigura = Point(x, y);
 }
 
+
+
 void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
     //Dibujo del punto
     Brush^ pincel = gcnew SolidBrush(Color::Red);

@@ -2,5 +2,6 @@
 #include "Transformador.h"
 
 List<Point>^ Transformador::RotacionAFigura(List<Point>^ ListaPuntosFigura, float Angulo) {
+	//FUNCION PARA ROTAR
 	return ListaPuntosFigura;
 }
