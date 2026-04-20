@@ -505,7 +505,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Program";
 			this->Text = L"Program";
-			this->Load += gcnew System::EventHandler(this, &Program::Program_Load);
 			this->GroupCoordBox->ResumeLayout(false);
 			this->GroupCoordBox->PerformLayout();
 			this->GroupFigureBox->ResumeLayout(false);
@@ -572,34 +571,29 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 		}
 
-
-		private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
+		private: System::Void ReflexXButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			ObjControlador->reflexionX();
+			PanelDiagram->Invalidate();
 		}
-private: System::Void ReflexXButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	ObjControlador->reflexionX();
+		private: System::Void ReflexYButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			ObjControlador->reflexionY();
+			PanelDiagram->Invalidate();
+		}
 
-	PanelDiagram->Invalidate();
-}
+		private: System::Void btnAceptar_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (ListFigureCombo->SelectedItem == nullptr) {
+				MessageBox::Show(L"Seleccione una figura del combobox.", L"Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return; 
+			}
 
-private: System::Void ReflexYButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	ObjControlador->reflexionY();
-	PanelDiagram->Invalidate();
-}
-private: System::Void btnAceptar_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (ListFigureCombo->SelectedItem == nullptr) {
-		//esta wea cosmica es por si un pendejo le da click al boton sin seleccionar una figura asi no se loquea el programa hijitos
-		MessageBox::Show(L"Seleccione una figura del combobox.", L"Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		return; 
-	}
-	// ESTA WEA COJE LO QUE SE SELECCIONA EN LA COMBOBOX, POSDATA: ME LLEGAN AL PINCHO  LOS NOMBRES EN INGLES
-	String^ nombre = ListFigureCombo->SelectedItem->ToString();
+			String^ nombre = ListFigureCombo->SelectedItem->ToString();
 
-	// Le pedimos al Controlador que genere la figura seleccionada
-	if (ObjControlador != nullptr) {
-		ObjControlador->SetFigura(nombre); 
-		// Invalidar el panel para que se repinte la figura 	
-		PanelDiagram->Invalidate();
-	}
-}
+			// Le pedimos al Controlador que genere la figura seleccionada
+			if (ObjControlador != nullptr) {
+				ObjControlador->SetFigura(nombre); 
+
+				PanelDiagram->Invalidate();
+			}
+		}
 };}
