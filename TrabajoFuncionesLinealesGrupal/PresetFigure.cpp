@@ -22,6 +22,6 @@ List<Point>^ PresetFigure::ObtenerFigura(String^ nombre, Point centro) {
         puntos->Add(Point(cx + 40, cy + 40));
         puntos->Add(Point(cx - 40, cy + 40));
     }
-
+    //pueden añadir mas figuras aca, pero para las proxima entregas
     return puntos;
 }

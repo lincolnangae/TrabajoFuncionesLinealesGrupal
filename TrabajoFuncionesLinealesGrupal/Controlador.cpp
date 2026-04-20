@@ -2,11 +2,6 @@
 #include "Transformador.h"
 #include "PresetFigure.h"
 
-//Base lista para implementarse en la siguiente entrega
-void Controlador::AplicarRotacion(float angulo) {
-    listaFiguras = Transformador::RotacionAFigura(listaFiguras, angulo);
-}
-
 void Controlador::SetPuntoCentral(int x, int y) {
     PuntoCentralFigura = Point(x, y);
 }
@@ -38,4 +33,9 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
         }
         g->DrawPolygon(lapiz, puntosDibujo);
     }
+}
+
+//Base lista para implementarse en la siguiente entrega
+void Controlador::AplicarRotacion(float angulo) {
+    listaFiguras = Transformador::RotacionAFigura(listaFiguras, angulo);
 }
