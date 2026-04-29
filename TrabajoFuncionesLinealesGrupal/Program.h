@@ -176,7 +176,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelCoordX->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelCoordX->Location = System::Drawing::Point(19, 25);
 			this->LabelCoordX->Name = L"LabelCoordX";
-			this->LabelCoordX->Size = System::Drawing::Size(27, 20);
+			this->LabelCoordX->Size = System::Drawing::Size(20, 16);
 			this->LabelCoordX->TabIndex = 1;
 			this->LabelCoordX->Text = L"X:";
 			// 
@@ -186,7 +186,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelCoordY->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelCoordY->Location = System::Drawing::Point(19, 60);
 			this->LabelCoordY->Name = L"LabelCoordY";
-			this->LabelCoordY->Size = System::Drawing::Size(26, 20);
+			this->LabelCoordY->Size = System::Drawing::Size(21, 16);
 			this->LabelCoordY->TabIndex = 2;
 			this->LabelCoordY->Text = L"Y:";
 			// 
@@ -211,7 +211,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextCoordY->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextCoordY->Location = System::Drawing::Point(89, 60);
 			this->TextCoordY->Name = L"TextCoordY";
-			this->TextCoordY->Size = System::Drawing::Size(135, 26);
+			this->TextCoordY->Size = System::Drawing::Size(135, 22);
 			this->TextCoordY->TabIndex = 5;
 			// 
 			// TextCoorX
@@ -219,7 +219,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextCoorX->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextCoorX->Location = System::Drawing::Point(88, 22);
 			this->TextCoorX->Name = L"TextCoorX";
-			this->TextCoorX->Size = System::Drawing::Size(135, 26);
+			this->TextCoorX->Size = System::Drawing::Size(135, 22);
 			this->TextCoorX->TabIndex = 4;
 			// 
 			// GroupFigureBox
@@ -242,7 +242,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Cuadrado", L"Triangulo" });
 			this->ListFigureCombo->Location = System::Drawing::Point(23, 26);
 			this->ListFigureCombo->Name = L"ListFigureCombo";
-			this->ListFigureCombo->Size = System::Drawing::Size(201, 28);
+			this->ListFigureCombo->Size = System::Drawing::Size(201, 24);
 			this->ListFigureCombo->TabIndex = 1;
 			// 
 			// ConfirnFigureButton
@@ -379,7 +379,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextScaleYPr->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextScaleYPr->Location = System::Drawing::Point(88, 61);
 			this->TextScaleYPr->Name = L"TextScaleYPr";
-			this->TextScaleYPr->Size = System::Drawing::Size(135, 26);
+			this->TextScaleYPr->Size = System::Drawing::Size(135, 22);
 			this->TextScaleYPr->TabIndex = 5;
 			// 
 			// TextScaleXPr
@@ -387,7 +387,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextScaleXPr->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextScaleXPr->Location = System::Drawing::Point(88, 22);
 			this->TextScaleXPr->Name = L"TextScaleXPr";
-			this->TextScaleXPr->Size = System::Drawing::Size(135, 26);
+			this->TextScaleXPr->Size = System::Drawing::Size(135, 22);
 			this->TextScaleXPr->TabIndex = 4;
 			// 
 			// LabelScaleX
@@ -396,7 +396,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelScaleX->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelScaleX->Location = System::Drawing::Point(19, 25);
 			this->LabelScaleX->Name = L"LabelScaleX";
-			this->LabelScaleX->Size = System::Drawing::Size(27, 20);
+			this->LabelScaleX->Size = System::Drawing::Size(20, 16);
 			this->LabelScaleX->TabIndex = 1;
 			this->LabelScaleX->Text = L"X:";
 			// 
@@ -406,7 +406,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelScaleY->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelScaleY->Location = System::Drawing::Point(19, 64);
 			this->LabelScaleY->Name = L"LabelScaleY";
-			this->LabelScaleY->Size = System::Drawing::Size(26, 20);
+			this->LabelScaleY->Size = System::Drawing::Size(21, 16);
 			this->LabelScaleY->TabIndex = 2;
 			this->LabelScaleY->Text = L"Y:";
 			// 
@@ -444,7 +444,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextRotatePr->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextRotatePr->Location = System::Drawing::Point(89, 26);
 			this->TextRotatePr->Name = L"TextRotatePr";
-			this->TextRotatePr->Size = System::Drawing::Size(135, 26);
+			this->TextRotatePr->Size = System::Drawing::Size(135, 22);
 			this->TextRotatePr->TabIndex = 4;
 			// 
 			// LabelAngle
@@ -453,7 +453,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelAngle->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelAngle->Location = System::Drawing::Point(19, 30);
 			this->LabelAngle->Name = L"LabelAngle";
-			this->LabelAngle->Size = System::Drawing::Size(72, 20);
+			this->LabelAngle->Size = System::Drawing::Size(59, 16);
 			this->LabelAngle->TabIndex = 1;
 			this->LabelAngle->Text = L"Angulo:";
 			// 
@@ -479,13 +479,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 				static_cast<System::Byte>(0)));
 			this->LabelPointAct->Location = System::Drawing::Point(946, 36);
 			this->LabelPointAct->Name = L"LabelPointAct";
-			this->LabelPointAct->Size = System::Drawing::Size(151, 20);
+			this->LabelPointAct->Size = System::Drawing::Size(128, 17);
 			this->LabelPointAct->TabIndex = 6;
 			this->LabelPointAct->Text = L"SIN REGISTROS";
 			// 
 			// Program
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -505,6 +505,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Program";
 			this->Text = L"Program";
+			this->Load += gcnew System::EventHandler(this, &Program::Program_Load);
 			this->GroupCoordBox->ResumeLayout(false);
 			this->GroupCoordBox->PerformLayout();
 			this->GroupFigureBox->ResumeLayout(false);
@@ -596,4 +597,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 				PanelDiagram->Invalidate();
 			}
 		}
+private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };}
