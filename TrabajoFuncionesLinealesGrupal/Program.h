@@ -470,6 +470,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ButtonCleanPC->TabIndex = 9;
 			this->ButtonCleanPC->Text = L"Limpiar";
 			this->ButtonCleanPC->UseVisualStyleBackColor = false;
+			this->ButtonCleanPC->Click += gcnew System::EventHandler(this, &Program::ButtonCleanPC_Click);
 			// 
 			// LabelPointAct
 			// 
@@ -558,7 +559,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 		private: System::Void PanelDiagram_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			Graphics^ g = e->Graphics;
-
 			// Dibujo de ejes
 			int cX = PanelDiagram->Width / 2;
 			int cY = PanelDiagram->Height / 2;
@@ -597,6 +597,11 @@ namespace TrabajoFuncionesLinealesGrupal {
 				PanelDiagram->Invalidate();
 			}
 		}
-private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+		private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+		private: System::Void ButtonCleanPC_Click(System::Object^ sender, System::EventArgs^ e) {
+			ObjControlador->limpiarDibujo();
+			PanelDiagram->Invalidate();
+		}
 };}

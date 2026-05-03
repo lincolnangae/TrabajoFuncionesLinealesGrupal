@@ -20,6 +20,9 @@ public:
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+	void limpiarDibujo() {
+		listaFiguras->Clear();
+	}
 	void reflexionX() {
 		PuntoCentralFigura.X = -PuntoCentralFigura.X;
 	}
