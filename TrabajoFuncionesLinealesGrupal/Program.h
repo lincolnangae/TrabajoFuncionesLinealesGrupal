@@ -358,7 +358,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupScaleBox->TabIndex = 7;
 			this->GroupScaleBox->TabStop = false;
 			this->GroupScaleBox->Text = L"HOMOTECIA";
-			this->GroupScaleBox->Visible = false;
 			// 
 			// ConfirmScaleButton
 			// 
