@@ -6,12 +6,12 @@ using namespace System::Drawing;
 
 public ref class Controlador {
 private:
-	List<Point>^ listaFiguras;
+	List<Point>^ listaFigura;
 	Point PuntoCentralFigura;
 
 public:
 	Controlador() {
-		listaFiguras = gcnew List<Point>(); // Inicializar
+		listaFigura = gcnew List<Point>(); // Inicializar
 	}
 	~Controlador() {}
 
@@ -20,8 +20,9 @@ public:
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+
 	void limpiarDibujo() {
-		listaFiguras->Clear();
+		listaFigura->Clear();
 	}
 	void reflexionX() {
 		PuntoCentralFigura.X = -PuntoCentralFigura.X;
