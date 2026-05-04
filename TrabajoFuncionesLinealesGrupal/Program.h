@@ -282,7 +282,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->Size = System::Drawing::Size(242, 121);
 			this->GroupReflexBox->TabIndex = 6;
 			this->GroupReflexBox->TabStop = false;
-			this->GroupReflexBox->Text = L"REFLEXION";
+			this->GroupReflexBox->Text = L"EJE DE REFLEXION";
 			// 
 			// ReflexOriginButton
 			// 
