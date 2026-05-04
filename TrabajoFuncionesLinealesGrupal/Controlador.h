@@ -16,12 +16,13 @@ public:
 	~Controlador() {}
 
 	//Declaracion de funcion
-	void AplicarRotacion(float angulo);
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
 
 	void limpiarDibujo() {
+		PuntoCentralFigura.X = 0;
+		PuntoCentralFigura.Y = 0;
 		listaFigura->Clear();
 	}
 	void reflexionX() {
@@ -30,6 +31,10 @@ public:
 	void reflexionY() {
 		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
 	}
+
+	//Funciones de transformacion
+	void AplicarEscala(float escala);
+
 
 	//Aplicacion en Controlador.cpp
 };

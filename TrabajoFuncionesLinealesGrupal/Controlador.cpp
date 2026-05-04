@@ -35,7 +35,7 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
     }
 }
 
-//Base lista para implementarse en la siguiente entrega
-void Controlador::AplicarRotacion(float angulo) {
-    listaFigura = Transformador::EscalamientoFigura(listaFigura, angulo);
+//Funciones de transformacion
+void Controlador::AplicarEscala(float escala) {
+    listaFigura = Transformador::EscalamientoFigura(listaFigura, escala);
 }

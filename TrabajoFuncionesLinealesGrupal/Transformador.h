@@ -8,7 +8,7 @@ using namespace System::Drawing;
 public ref class Transformador {
 public:
 	//Declaracion de funcion
-	static List<Point>^ EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala);
+	static List<Point>^ EscalamientoFigura(List<Point>^ ListaPuntosFigura, float escala);
 
 	//Aplicacion en Transformador.cpp
 };
