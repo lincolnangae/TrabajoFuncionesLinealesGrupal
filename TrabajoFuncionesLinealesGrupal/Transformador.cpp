@@ -2,6 +2,8 @@
 #include "Transformador.h"
 
 List<Point>^ Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
-	//FUNCION PARA ROTAR
+	
+
+	
 	return ListaPuntosFigura;
 }

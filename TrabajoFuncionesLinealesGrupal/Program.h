@@ -238,7 +238,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->ListFigureCombo->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->ListFigureCombo->FormattingEnabled = true;
-			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Cuadrado", L"Triangulo" });
+			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cuadrado", L"Triangulo",L"Estrella" });
 			this->ListFigureCombo->Location = System::Drawing::Point(23, 26);
 			this->ListFigureCombo->Name = L"ListFigureCombo";
 			this->ListFigureCombo->Size = System::Drawing::Size(201, 24);
@@ -369,6 +369,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmScaleButton->TabIndex = 2;
 			this->ConfirmScaleButton->Text = L"Aceptar";
 			this->ConfirmScaleButton->UseVisualStyleBackColor = false;
+			this->ConfirmScaleButton->Click += gcnew System::EventHandler(this, &Program::ConfirmScaleButton_Click);
 			// 
 			// TextScaleXPr
 			// 
@@ -584,4 +585,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 		}
 
 
+private: System::Void ConfirmScaleButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
 };}
