@@ -7,7 +7,9 @@ void Controlador::SetPuntoCentral(int x, int y) {
 }
 
 void Controlador::SetFigura(System::String^ nombre) {
-    listaFigura = PresetFigure::ObtenerFigura(nombre, Point(0, 0));
+    listaOriginal = PresetFigure::ObtenerFigura(nombre, Point(0, 0));
+
+    listaFigura = gcnew List<Point>(listaOriginal);
 }
 
 void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
@@ -37,5 +39,7 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
 
 //Funciones de transformacion
 void Controlador::AplicarEscala(float escala) {
-    listaFigura = Transformador::EscalamientoFigura(listaFigura, escala);
+    if (listaOriginal != nullptr) {
+        listaFigura = Transformador::EscalamientoFigura(listaOriginal, escala);
+    }
 }

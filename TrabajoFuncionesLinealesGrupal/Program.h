@@ -64,7 +64,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 	private: System::Windows::Forms::GroupBox^ GroupReflexBox;
 
 	private: System::Windows::Forms::Button^ ReflexOriginButton;
-	private: System::Windows::Forms::Button^ ReflexBiscButton;
+
 	private: System::Windows::Forms::Button^ ReflexYButton;
 	private: System::Windows::Forms::Button^ ReflexXButton;
 
@@ -74,8 +74,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 
 	private: System::Windows::Forms::GroupBox^ GroupScaleBox;
+	private: System::Windows::Forms::TextBox^ TextScale;
 
-	private: System::Windows::Forms::TextBox^ TextScaleXPr;
+
 	private: System::Windows::Forms::Label^ LabelScaled;
 
 
@@ -134,12 +135,11 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->PanelDiagram = (gcnew System::Windows::Forms::Panel());
 			this->GroupReflexBox = (gcnew System::Windows::Forms::GroupBox());
 			this->ReflexOriginButton = (gcnew System::Windows::Forms::Button());
-			this->ReflexBiscButton = (gcnew System::Windows::Forms::Button());
 			this->ReflexYButton = (gcnew System::Windows::Forms::Button());
 			this->ReflexXButton = (gcnew System::Windows::Forms::Button());
 			this->GroupScaleBox = (gcnew System::Windows::Forms::GroupBox());
 			this->ConfirmScaleButton = (gcnew System::Windows::Forms::Button());
-			this->TextScaleXPr = (gcnew System::Windows::Forms::TextBox());
+			this->TextScale = (gcnew System::Windows::Forms::TextBox());
 			this->LabelScaled = (gcnew System::Windows::Forms::Label());
 			this->GroupRotateBox = (gcnew System::Windows::Forms::GroupBox());
 			this->ConfirmRotateButton = (gcnew System::Windows::Forms::Button());
@@ -238,7 +238,14 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->ListFigureCombo->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->ListFigureCombo->FormattingEnabled = true;
-			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cuadrado", L"Triangulo",L"Estrella" });
+			//Figuras a generar
+			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Cuadrado",
+					L"Triangulo",
+					L"Estrella",
+					L"Pentagono",
+					L"Rombo"
+			});
 			this->ListFigureCombo->Location = System::Drawing::Point(23, 26);
 			this->ListFigureCombo->Name = L"ListFigureCombo";
 			this->ListFigureCombo->Size = System::Drawing::Size(201, 24);
@@ -274,7 +281,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupReflexBox.BackgroundImage")));
 			this->GroupReflexBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->GroupReflexBox->Controls->Add(this->ReflexOriginButton);
-			this->GroupReflexBox->Controls->Add(this->ReflexBiscButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexYButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexXButton);
 			this->GroupReflexBox->Location = System::Drawing::Point(928, 385);
@@ -291,26 +297,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ReflexOriginButton->FlatAppearance->BorderSize = 3;
 			this->ReflexOriginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ReflexOriginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ReflexOriginButton->Location = System::Drawing::Point(123, 68);
+			this->ReflexOriginButton->Location = System::Drawing::Point(65, 66);
 			this->ReflexOriginButton->Name = L"ReflexOriginButton";
 			this->ReflexOriginButton->Size = System::Drawing::Size(113, 35);
 			this->ReflexOriginButton->TabIndex = 5;
 			this->ReflexOriginButton->Text = L"Origen";
 			this->ReflexOriginButton->UseVisualStyleBackColor = false;
-			// 
-			// ReflexBiscButton
-			// 
-			this->ReflexBiscButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->ReflexBiscButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ReflexBiscButton.BackgroundImage")));
-			this->ReflexBiscButton->FlatAppearance->BorderSize = 3;
-			this->ReflexBiscButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ReflexBiscButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ReflexBiscButton->Location = System::Drawing::Point(6, 68);
-			this->ReflexBiscButton->Name = L"ReflexBiscButton";
-			this->ReflexBiscButton->Size = System::Drawing::Size(113, 35);
-			this->ReflexBiscButton->TabIndex = 4;
-			this->ReflexBiscButton->Text = L"Bisectriz";
-			this->ReflexBiscButton->UseVisualStyleBackColor = false;
+			this->ReflexOriginButton->Click += gcnew System::EventHandler(this, &Program::ReflexOriginButton_Click);
 			// 
 			// ReflexYButton
 			// 
@@ -347,7 +340,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupScaleBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupScaleBox.BackgroundImage")));
 			this->GroupScaleBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->GroupScaleBox->Controls->Add(this->ConfirmScaleButton);
-			this->GroupScaleBox->Controls->Add(this->TextScaleXPr);
+			this->GroupScaleBox->Controls->Add(this->TextScale);
 			this->GroupScaleBox->Controls->Add(this->LabelScaled);
 			this->GroupScaleBox->Location = System::Drawing::Point(928, 512);
 			this->GroupScaleBox->Name = L"GroupScaleBox";
@@ -371,13 +364,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmScaleButton->UseVisualStyleBackColor = false;
 			this->ConfirmScaleButton->Click += gcnew System::EventHandler(this, &Program::ConfirmScaleButton_Click);
 			// 
-			// TextScaleXPr
+			// TextScale
 			// 
-			this->TextScaleXPr->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TextScaleXPr->Location = System::Drawing::Point(89, 25);
-			this->TextScaleXPr->Name = L"TextScaleXPr";
-			this->TextScaleXPr->Size = System::Drawing::Size(135, 22);
-			this->TextScaleXPr->TabIndex = 4;
+			this->TextScale->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextScale->Location = System::Drawing::Point(89, 25);
+			this->TextScale->Name = L"TextScale";
+			this->TextScale->Size = System::Drawing::Size(135, 22);
+			this->TextScale->TabIndex = 4;
 			// 
 			// LabelScaled
 			// 
@@ -485,7 +478,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Program";
 			this->Text = L"Program";
-			this->Load += gcnew System::EventHandler(this, &Program::Program_Load);
 			this->GroupCoordBox->ResumeLayout(false);
 			this->GroupCoordBox->PerformLayout();
 			this->GroupFigureBox->ResumeLayout(false);
@@ -535,7 +527,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 		}
 
-
 		private: System::Void PanelDiagram_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			Graphics^ g = e->Graphics;
 			// Dibujo de ejes
@@ -560,6 +551,11 @@ namespace TrabajoFuncionesLinealesGrupal {
 			ObjControlador->reflexionY();
 			PanelDiagram->Invalidate();
 		}
+		
+		private: System::Void ReflexOriginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			ObjControlador->reflexionOrigen();
+			PanelDiagram->Invalidate();
+		}
 
 		private: System::Void btnAceptar_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (ListFigureCombo->SelectedItem == nullptr) {
@@ -576,16 +572,41 @@ namespace TrabajoFuncionesLinealesGrupal {
 				PanelDiagram->Invalidate();
 			}
 		}
-		private: System::Void Program_Load(System::Object^ sender, System::EventArgs^ e) {
-		}
 
 		private: System::Void ButtonCleanPC_Click(System::Object^ sender, System::EventArgs^ e) {
 			ObjControlador->limpiarDibujo();
 			PanelDiagram->Invalidate();
 		}
 
+		private: System::Void ConfirmScaleButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-private: System::Void ConfirmScaleButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (TextScale->Text->Trim()->Length == 0) {
+				MessageBox::Show(L"Por favor, complete el campo.", L"Error de Entrada", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
 
-}
+			try {
+				int scale = System::Convert::ToInt32(TextScale->Text);
+				int limite = 8;
+
+				if (Math::Abs(scale) > limite) {
+					MessageBox::Show(L"Coordenada fuera de rango.\nIngrese valores entre -" + limite + L" y " + limite + L".",
+						L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+
+				ObjControlador->AplicarEscala(scale);
+				PanelDiagram->Invalidate();
+
+			}
+			//Errores posibles al poner una coordenada
+			catch (System::FormatException^) {
+				MessageBox::Show(L"Entrada no válida. Por favor, use solo números enteros.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			catch (System::OverflowException^) {
+				MessageBox::Show(L"El número ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+
+
 };}
