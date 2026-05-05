@@ -6,6 +6,7 @@ using namespace System::Drawing;
 
 public ref class Controlador {
 private:
+	List<Point>^ listaOriginal;
 	List<Point>^ listaFigura;
 	Point PuntoCentralFigura;
 
@@ -25,16 +26,22 @@ public:
 		PuntoCentralFigura.Y = 0;
 		listaFigura->Clear();
 	}
-	void reflexionX() {
-		PuntoCentralFigura.X = -PuntoCentralFigura.X;
-	}
-	void reflexionY() {
-		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
-	}
+
 
 	//Funciones de transformacion
 	void AplicarEscala(float escala);
 
+	void reflexionX() {
+		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
+	}
 
+	void reflexionY() {
+		PuntoCentralFigura.X = -PuntoCentralFigura.X;
+	}
+
+	void reflexionOrigen() {
+		PuntoCentralFigura.Y *= -1;
+		PuntoCentralFigura.X *= -1;
+	}
 	//Aplicacion en Controlador.cpp
 };

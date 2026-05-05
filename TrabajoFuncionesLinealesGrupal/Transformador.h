@@ -9,6 +9,5 @@ public ref class Transformador {
 public:
 	//Declaracion de funcion
 	static List<Point>^ EscalamientoFigura(List<Point>^ ListaPuntosFigura, float escala);
-
 	//Aplicacion en Transformador.cpp
 };
