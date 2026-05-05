@@ -586,7 +586,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 
 			try {
-				int scale = System::Convert::ToInt32(TextScale->Text);
+				float scale = System::Convert::ToSingle(TextScale->Text);
 				int limite = 8;
 
 				if (Math::Abs(scale) > limite) {

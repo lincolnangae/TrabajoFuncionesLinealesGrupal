@@ -4,8 +4,8 @@
 List<Point>^ Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
     List<Point>^ PuntosTransformados = gcnew List<Point>();
     for each(Point p in ListaPuntosFigura) {
-        int nuevoX = System::Convert::ToInt32(p.X * Escala);
-        int nuevoY = System::Convert::ToInt32(p.Y * Escala);
+        float nuevoX = System::Convert::ToSingle(p.X * Escala);
+        float nuevoY = System::Convert::ToSingle(p.Y * Escala);
         PuntosTransformados->Add(Point(nuevoX, nuevoY));
     }
     return PuntosTransformados;
