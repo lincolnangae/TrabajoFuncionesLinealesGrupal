@@ -32,11 +32,11 @@ public:
 	void AplicarEscala(float escala);
 
 	void reflexionX() {
-		PuntoCentralFigura.X = -PuntoCentralFigura.X;
+		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
 	}
 
 	void reflexionY() {
-		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
+		PuntoCentralFigura.X = -PuntoCentralFigura.X;
 	}
 
 	void reflexionOrigen() {
