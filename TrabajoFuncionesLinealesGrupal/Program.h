@@ -284,7 +284,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->Controls->Add(this->ReflexYButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexXButton);
 			this->GroupReflexBox->Location = System::Drawing::Point(928, 385);
-			this->GroupReflexBox->Name = L"GroupReflexBox";
+		 this->GroupReflexBox->Name = L"GroupReflexBox";
 			this->GroupReflexBox->Size = System::Drawing::Size(242, 121);
 			this->GroupReflexBox->TabIndex = 6;
 			this->GroupReflexBox->TabStop = false;
@@ -448,7 +448,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->LabelPointAct->AutoSize = true;
 			this->LabelPointAct->BackColor = System::Drawing::Color::Azure;
-			this->LabelPointAct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+		 this->LabelPointAct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LabelPointAct->Location = System::Drawing::Point(925, 39);
 			this->LabelPointAct->Name = L"LabelPointAct";
@@ -470,7 +470,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->Controls->Add(this->GroupScaleBox);
 			this->Controls->Add(this->GroupReflexBox);
 			this->Controls->Add(this->PanelDiagram);
-			this->Controls->Add(this->GroupFigureBox);
+		 this->Controls->Add(this->GroupFigureBox);
 			this->Controls->Add(this->GroupCoordBox);
 			this->DoubleBuffered = true;
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -555,6 +555,21 @@ namespace TrabajoFuncionesLinealesGrupal {
 		private: System::Void ReflexOriginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 			ObjControlador->reflexionOrigen();
 			PanelDiagram->Invalidate();
+		}
+
+		private: System::Void ConfirmScaleButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (TextScaleXPr->Text->Trim()->Length == 0) {
+				MessageBox::Show(L"Por favor, ingrese un valor de escala.", L"Error de Entrada", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			try {
+				float escala = System::Convert::ToSingle(TextScaleXPr->Text);
+				ObjControlador->AplicarEscala(escala);
+				PanelDiagram->Invalidate();
+			}
+			catch (System::FormatException^) {
+				MessageBox::Show(L"Entrada no válida. Por favor, use números.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 		}
 
 		private: System::Void btnAceptar_Click(System::Object^ sender, System::EventArgs^ e) {

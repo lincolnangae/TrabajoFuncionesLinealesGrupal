@@ -2,11 +2,12 @@
 #include "Transformador.h"
 
 List<Point>^ Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
-    List<Point>^ PuntosTransformados = gcnew List<Point>();
-    for each(Point p in ListaPuntosFigura) {
-        int nuevoX = System::Convert::ToInt32(p.X * Escala);
-        int nuevoY = System::Convert::ToInt32(p.Y * Escala);
-        PuntosTransformados->Add(Point(nuevoX, nuevoY));
-    }
-    return PuntosTransformados;
-};
+	//FUNCION PARA ESCALAR
+	List<Point>^ figuraEscalada = gcnew List<Point>();
+	for (int i = 0; i < ListaPuntosFigura->Count; i++) {
+		int nuevoX = (int)(ListaPuntosFigura[i].X * Escala);
+		int nuevoY = (int)(ListaPuntosFigura[i].Y * Escala);
+		figuraEscalada->Add(Point(nuevoX, nuevoY));
+	}
+	return figuraEscalada;
+}
