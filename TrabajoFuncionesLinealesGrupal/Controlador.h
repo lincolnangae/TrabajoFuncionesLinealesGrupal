@@ -10,9 +10,16 @@ private:
 	List<Point>^ listaFigura;
 	Point PuntoCentralFigura;
 
+	bool reflexXActiva;
+	bool reflexYActiva;
+	bool reflexOrigenActiva;
+
 public:
 	Controlador() {
 		listaFigura = gcnew List<Point>(); // Inicializar
+		reflexXActiva = false;
+		reflexYActiva = false;
+		reflexOrigenActiva = false;
 	}
 	~Controlador() {}
 
@@ -25,23 +32,41 @@ public:
 		PuntoCentralFigura.X = 0;
 		PuntoCentralFigura.Y = 0;
 		listaFigura->Clear();
+		reflexXActiva = false;
+		reflexYActiva = false;
+		reflexOrigenActiva = false;
 	}
 
 
 	//Funciones de transformacion
 	void AplicarEscala(float escala);
 
-	void reflexionX() {
-		PuntoCentralFigura.Y = -PuntoCentralFigura.Y;
+	bool reflexionX() {
+		reflexXActiva = !reflexXActiva;
+		return reflexXActiva;
 	}
 
-	void reflexionY() {
-		PuntoCentralFigura.X = -PuntoCentralFigura.X;
+	bool reflexionY() {
+		reflexYActiva = !reflexYActiva;
+		return reflexYActiva;
 	}
 
-	void reflexionOrigen() {
-		PuntoCentralFigura.Y *= -1;
-		PuntoCentralFigura.X *= -1;
+	bool reflexionOrigen() {
+		reflexOrigenActiva = !reflexOrigenActiva;
+		return reflexOrigenActiva;
 	}
+
+	bool GetReflexionXActiva() {
+		return reflexXActiva;
+	}
+
+	bool GetReflexionYActiva() {
+		return reflexYActiva;
+	}
+
+	bool GetReflexionOrigenActiva() {
+		return reflexOrigenActiva;
+	}
+
 	//Aplicacion en Controlador.cpp
 };

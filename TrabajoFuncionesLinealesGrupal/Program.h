@@ -543,17 +543,27 @@ namespace TrabajoFuncionesLinealesGrupal {
 		}
 
 		private: System::Void ReflexXButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			ObjControlador->reflexionX();
+			bool activa = ObjControlador->reflexionX();
+			// Feedback visual en el botón
+			ReflexXButton->BackColor = activa
+				? System::Drawing::Color::OrangeRed
+				: System::Drawing::SystemColors::InactiveBorder;
 			PanelDiagram->Invalidate();
 		}
 
 		private: System::Void ReflexYButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			ObjControlador->reflexionY();
+			bool activa = ObjControlador->reflexionY();
+			ReflexYButton->BackColor = activa
+				? System::Drawing::Color::MediumSeaGreen
+				: System::Drawing::SystemColors::InactiveBorder;
 			PanelDiagram->Invalidate();
 		}
 		
 		private: System::Void ReflexOriginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			ObjControlador->reflexionOrigen();
+			bool activa = ObjControlador->reflexionOrigen();
+			ReflexOriginButton->BackColor = activa
+				? System::Drawing::Color::DodgerBlue
+				: System::Drawing::SystemColors::InactiveBorder;
 			PanelDiagram->Invalidate();
 		}
 
