@@ -175,7 +175,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelCoordX->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelCoordX->Location = System::Drawing::Point(19, 25);
 			this->LabelCoordX->Name = L"LabelCoordX";
-			this->LabelCoordX->Size = System::Drawing::Size(20, 16);
+			this->LabelCoordX->Size = System::Drawing::Size(27, 20);
 			this->LabelCoordX->TabIndex = 1;
 			this->LabelCoordX->Text = L"X:";
 			// 
@@ -185,7 +185,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelCoordY->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelCoordY->Location = System::Drawing::Point(19, 60);
 			this->LabelCoordY->Name = L"LabelCoordY";
-			this->LabelCoordY->Size = System::Drawing::Size(21, 16);
+			this->LabelCoordY->Size = System::Drawing::Size(26, 20);
 			this->LabelCoordY->TabIndex = 2;
 			this->LabelCoordY->Text = L"Y:";
 			// 
@@ -210,7 +210,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextCoordY->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextCoordY->Location = System::Drawing::Point(89, 60);
 			this->TextCoordY->Name = L"TextCoordY";
-			this->TextCoordY->Size = System::Drawing::Size(135, 22);
+			this->TextCoordY->Size = System::Drawing::Size(135, 26);
 			this->TextCoordY->TabIndex = 5;
 			// 
 			// TextCoorX
@@ -218,7 +218,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextCoorX->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextCoorX->Location = System::Drawing::Point(88, 22);
 			this->TextCoorX->Name = L"TextCoorX";
-			this->TextCoorX->Size = System::Drawing::Size(135, 22);
+			this->TextCoorX->Size = System::Drawing::Size(135, 26);
 			this->TextCoorX->TabIndex = 4;
 			// 
 			// GroupFigureBox
@@ -238,17 +238,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->ListFigureCombo->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->ListFigureCombo->FormattingEnabled = true;
-			//Figuras a generar
 			this->ListFigureCombo->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Cuadrado",
-					L"Triangulo",
-					L"Estrella",
-					L"Pentagono",
+				L"Cuadrado", L"Triangulo", L"Estrella", L"Pentagono",
 					L"Rombo"
 			});
 			this->ListFigureCombo->Location = System::Drawing::Point(23, 26);
 			this->ListFigureCombo->Name = L"ListFigureCombo";
-			this->ListFigureCombo->Size = System::Drawing::Size(201, 24);
+			this->ListFigureCombo->Size = System::Drawing::Size(201, 28);
 			this->ListFigureCombo->TabIndex = 1;
 			// 
 			// ConfirnFigureButton
@@ -369,7 +365,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextScale->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextScale->Location = System::Drawing::Point(89, 25);
 			this->TextScale->Name = L"TextScale";
-			this->TextScale->Size = System::Drawing::Size(135, 22);
+			this->TextScale->Size = System::Drawing::Size(135, 26);
 			this->TextScale->TabIndex = 4;
 			// 
 			// LabelScaled
@@ -378,7 +374,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelScaled->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelScaled->Location = System::Drawing::Point(20, 31);
 			this->LabelScaled->Name = L"LabelScaled";
-			this->LabelScaled->Size = System::Drawing::Size(48, 16);
+			this->LabelScaled->Size = System::Drawing::Size(59, 20);
 			this->LabelScaled->TabIndex = 1;
 			this->LabelScaled->Text = L"Valor:";
 			// 
@@ -395,7 +391,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupRotateBox->TabIndex = 8;
 			this->GroupRotateBox->TabStop = false;
 			this->GroupRotateBox->Text = L"ROTACION";
-			this->GroupRotateBox->Visible = false;
 			// 
 			// ConfirmRotateButton
 			// 
@@ -410,14 +405,16 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmRotateButton->TabIndex = 8;
 			this->ConfirmRotateButton->Text = L"Aceptar";
 			this->ConfirmRotateButton->UseVisualStyleBackColor = false;
+			this->ConfirmRotateButton->Click += gcnew System::EventHandler(this, &Program::ConfirmRotateButton_Click);
 			// 
 			// TextRotatePr
 			// 
 			this->TextRotatePr->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->TextRotatePr->Location = System::Drawing::Point(89, 26);
 			this->TextRotatePr->Name = L"TextRotatePr";
-			this->TextRotatePr->Size = System::Drawing::Size(135, 22);
+			this->TextRotatePr->Size = System::Drawing::Size(135, 26);
 			this->TextRotatePr->TabIndex = 4;
+			this->TextRotatePr->TextChanged += gcnew System::EventHandler(this, &Program::TextRotatePr_TextChanged);
 			// 
 			// LabelAngle
 			// 
@@ -425,7 +422,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelAngle->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelAngle->Location = System::Drawing::Point(19, 30);
 			this->LabelAngle->Name = L"LabelAngle";
-			this->LabelAngle->Size = System::Drawing::Size(59, 16);
+			this->LabelAngle->Size = System::Drawing::Size(72, 20);
 			this->LabelAngle->TabIndex = 1;
 			this->LabelAngle->Text = L"Angulo:";
 			// 
@@ -452,13 +449,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 				static_cast<System::Byte>(0)));
 			this->LabelPointAct->Location = System::Drawing::Point(925, 39);
 			this->LabelPointAct->Name = L"LabelPointAct";
-			this->LabelPointAct->Size = System::Drawing::Size(128, 17);
+			this->LabelPointAct->Size = System::Drawing::Size(151, 20);
 			this->LabelPointAct->TabIndex = 6;
 			this->LabelPointAct->Text = L"SIN REGISTROS";
 			// 
 			// Program
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -619,4 +616,30 @@ namespace TrabajoFuncionesLinealesGrupal {
 		}
 
 
+private: System::Void TextRotatePr_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void ConfirmRotateButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (TextRotatePr->Text->Trim()->Length == 0) {
+		MessageBox::Show(L"Por favor, ingrese un ángulo.", L"Error de Entrada",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		return;
+	}
+	try {
+		float angulo = System::Convert::ToSingle(TextRotatePr->Text);
+
+		if (System::Math::Abs(angulo) > 360) {
+			MessageBox::Show(L"Ingrese un ángulo entre -360 y 360.",
+				L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		ObjControlador->AplicarRotacion(angulo);
+		PanelDiagram->Invalidate();
+	}
+	catch (System::FormatException^) {
+		MessageBox::Show(L"Entrada no válida. Use números.", L"Error de Formato",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
 };}

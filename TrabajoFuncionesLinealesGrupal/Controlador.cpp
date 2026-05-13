@@ -110,3 +110,12 @@ void Controlador::AplicarEscala(float escala) {
         listaFigura = Transformador::EscalamientoFigura(listaOriginal, escala);
     }
 }
+
+void Controlador::AplicarRotacion(float angulo) {
+    if (listaOriginal != nullptr) {
+        anguloAcumulado += angulo;
+        // Primero escalar si hay escala aplicada, luego rotar
+        // Rotamos siempre desde listaOriginal para evitar distorsión acumulada
+        listaFigura = Transformador::RotacionFigura(listaOriginal, anguloAcumulado);
+    }
+}

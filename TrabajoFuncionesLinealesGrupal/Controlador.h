@@ -10,6 +10,7 @@ private:
 	List<Point>^ listaFigura;
 	Point PuntoCentralFigura;
 
+	float anguloAcumulado; // Para llevar el control del ángulo total de rotación aplicado
 	bool reflexXActiva;
 	bool reflexYActiva;
 	bool reflexOrigenActiva;
@@ -20,6 +21,7 @@ public:
 		reflexXActiva = false;
 		reflexYActiva = false;
 		reflexOrigenActiva = false;
+		anguloAcumulado = 0.0f;
 	}
 	~Controlador() {}
 
@@ -27,6 +29,7 @@ public:
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+	void AplicarRotacion(float angulo);
 
 	void limpiarDibujo() {
 		PuntoCentralFigura.X = 0;
@@ -35,6 +38,7 @@ public:
 		reflexXActiva = false;
 		reflexYActiva = false;
 		reflexOrigenActiva = false;
+		anguloAcumulado = 0.0f;
 	}
 
 
