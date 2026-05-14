@@ -12,6 +12,7 @@ List<Point>^ Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, f
     return PuntosTransformados;
 };
 
+
 List<Point>^ Transformador::RotacionFigura(List<Point>^ ListaPuntosFigura, float anguloDegrees) {
     List<Point>^ PuntosTransformados = gcnew List<Point>();
 
