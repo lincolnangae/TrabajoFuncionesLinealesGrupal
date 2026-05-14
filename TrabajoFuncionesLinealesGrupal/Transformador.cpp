@@ -5,7 +5,7 @@ using namespace System;
 void Transformador::TraslacionFigura(List<Point>^ ListaPuntosFigura, float deltaX, float deltaY) {
     float Matriz[3][3] = {
         { 1, 0, deltaX  },
-        { 0, 1, -deltaY },
+        { 0, 1, deltaY  },
         { 0, 0, 1       }
     };
 

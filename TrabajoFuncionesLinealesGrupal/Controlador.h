@@ -38,7 +38,7 @@ public:
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
-	void AplicarRotacion(float angulo);
+	void AplicarRotacionCentro(float angulo);
 	void AplicarDesplazamiento(float deltaX, float deltaY);
 	void AplicarEscala(float escala);
 	void AplicarReflexionX();

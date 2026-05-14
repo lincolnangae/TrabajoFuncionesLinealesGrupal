@@ -83,8 +83,10 @@ namespace TrabajoFuncionesLinealesGrupal {
 	private: System::Windows::Forms::Button^ ConfirmScaleButton;
 	private: System::Windows::Forms::GroupBox^ GroupRotateBox;
 	private: System::Windows::Forms::Button^ ConfirmRotateButton;
-	private: System::Windows::Forms::TextBox^ TextRotatePr;
-	private: System::Windows::Forms::Label^ LabelAngle;
+	private: System::Windows::Forms::TextBox^ TextRotateCenter;
+	private: System::Windows::Forms::Label^ LabelAngle1;
+
+
 	private: System::Windows::Forms::Button^ ButtonCleanPC;
 	private: System::Windows::Forms::Label^ LabelPointAct;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
@@ -96,6 +98,8 @@ namespace TrabajoFuncionesLinealesGrupal {
 	private: System::Windows::Forms::TextBox^ TextDespY;
 
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ LabelAngle2;
+	private: System::Windows::Forms::TextBox^ TextRotateFigure;
 
 
 
@@ -152,8 +156,8 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelScaled = (gcnew System::Windows::Forms::Label());
 			this->GroupRotateBox = (gcnew System::Windows::Forms::GroupBox());
 			this->ConfirmRotateButton = (gcnew System::Windows::Forms::Button());
-			this->TextRotatePr = (gcnew System::Windows::Forms::TextBox());
-			this->LabelAngle = (gcnew System::Windows::Forms::Label());
+			this->TextRotateCenter = (gcnew System::Windows::Forms::TextBox());
+			this->LabelAngle1 = (gcnew System::Windows::Forms::Label());
 			this->ButtonCleanPC = (gcnew System::Windows::Forms::Button());
 			this->LabelPointAct = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -162,6 +166,8 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmDesplazarButton = (gcnew System::Windows::Forms::Button());
 			this->TextDespX = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->TextRotateFigure = (gcnew System::Windows::Forms::TextBox());
+			this->LabelAngle2 = (gcnew System::Windows::Forms::Label());
 			this->GroupCoordBox->SuspendLayout();
 			this->GroupFigureBox->SuspendLayout();
 			this->GroupReflexBox->SuspendLayout();
@@ -177,7 +183,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->btnConfirmCord->FlatAppearance->BorderSize = 3;
 			this->btnConfirmCord->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnConfirmCord->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->btnConfirmCord->Location = System::Drawing::Point(22, 88);
+			this->btnConfirmCord->Location = System::Drawing::Point(22, 82);
 			this->btnConfirmCord->Name = L"btnConfirmCord";
 			this->btnConfirmCord->Size = System::Drawing::Size(201, 38);
 			this->btnConfirmCord->TabIndex = 0;
@@ -199,7 +205,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->LabelCoordY->AutoSize = true;
 			this->LabelCoordY->BackColor = System::Drawing::Color::LightCyan;
-			this->LabelCoordY->Location = System::Drawing::Point(19, 60);
+			this->LabelCoordY->Location = System::Drawing::Point(20, 54);
 			this->LabelCoordY->Name = L"LabelCoordY";
 			this->LabelCoordY->Size = System::Drawing::Size(21, 16);
 			this->LabelCoordY->TabIndex = 2;
@@ -214,9 +220,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupCoordBox->Controls->Add(this->LabelCoordX);
 			this->GroupCoordBox->Controls->Add(this->btnConfirmCord);
 			this->GroupCoordBox->Controls->Add(this->LabelCoordY);
-			this->GroupCoordBox->Location = System::Drawing::Point(922, 59);
+			this->GroupCoordBox->Location = System::Drawing::Point(922, 40);
 			this->GroupCoordBox->Name = L"GroupCoordBox";
-			this->GroupCoordBox->Size = System::Drawing::Size(242, 141);
+			this->GroupCoordBox->Size = System::Drawing::Size(242, 133);
 			this->GroupCoordBox->TabIndex = 3;
 			this->GroupCoordBox->TabStop = false;
 			this->GroupCoordBox->Text = L"COORDENADAS";
@@ -224,7 +230,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// TextCoordY
 			// 
 			this->TextCoordY->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TextCoordY->Location = System::Drawing::Point(89, 60);
+			this->TextCoordY->Location = System::Drawing::Point(89, 54);
 			this->TextCoordY->Name = L"TextCoordY";
 			this->TextCoordY->Size = System::Drawing::Size(135, 22);
 			this->TextCoordY->TabIndex = 5;
@@ -243,7 +249,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupFigureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->GroupFigureBox->Controls->Add(this->ListFigureCombo);
 			this->GroupFigureBox->Controls->Add(this->ConfirnFigureButton);
-			this->GroupFigureBox->Location = System::Drawing::Point(922, 206);
+			this->GroupFigureBox->Location = System::Drawing::Point(922, 179);
 			this->GroupFigureBox->Name = L"GroupFigureBox";
 			this->GroupFigureBox->Size = System::Drawing::Size(242, 110);
 			this->GroupFigureBox->TabIndex = 4;
@@ -295,7 +301,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupReflexBox->Controls->Add(this->ReflexOriginButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexYButton);
 			this->GroupReflexBox->Controls->Add(this->ReflexXButton);
-			this->GroupReflexBox->Location = System::Drawing::Point(922, 322);
+			this->GroupReflexBox->Location = System::Drawing::Point(922, 295);
 			this->GroupReflexBox->Name = L"GroupReflexBox";
 			this->GroupReflexBox->Size = System::Drawing::Size(242, 121);
 			this->GroupReflexBox->TabIndex = 6;
@@ -354,9 +360,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->GroupScaleBox->Controls->Add(this->ConfirmScaleButton);
 			this->GroupScaleBox->Controls->Add(this->TextScale);
 			this->GroupScaleBox->Controls->Add(this->LabelScaled);
-			this->GroupScaleBox->Location = System::Drawing::Point(922, 449);
+			this->GroupScaleBox->Location = System::Drawing::Point(922, 422);
 			this->GroupScaleBox->Name = L"GroupScaleBox";
-			this->GroupScaleBox->Size = System::Drawing::Size(242, 120);
+			this->GroupScaleBox->Size = System::Drawing::Size(242, 111);
 			this->GroupScaleBox->TabIndex = 7;
 			this->GroupScaleBox->TabStop = false;
 			this->GroupScaleBox->Text = L"HOMOTECIA";
@@ -368,7 +374,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmScaleButton->FlatAppearance->BorderSize = 3;
 			this->ConfirmScaleButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ConfirmScaleButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ConfirmScaleButton->Location = System::Drawing::Point(23, 70);
+			this->ConfirmScaleButton->Location = System::Drawing::Point(23, 62);
 			this->ConfirmScaleButton->Name = L"ConfirmScaleButton";
 			this->ConfirmScaleButton->Size = System::Drawing::Size(201, 35);
 			this->ConfirmScaleButton->TabIndex = 2;
@@ -398,12 +404,14 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->GroupRotateBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupRotateBox.BackgroundImage")));
 			this->GroupRotateBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->GroupRotateBox->Controls->Add(this->LabelAngle2);
+			this->GroupRotateBox->Controls->Add(this->TextRotateFigure);
 			this->GroupRotateBox->Controls->Add(this->ConfirmRotateButton);
-			this->GroupRotateBox->Controls->Add(this->TextRotatePr);
-			this->GroupRotateBox->Controls->Add(this->LabelAngle);
-			this->GroupRotateBox->Location = System::Drawing::Point(922, 575);
+			this->GroupRotateBox->Controls->Add(this->TextRotateCenter);
+			this->GroupRotateBox->Controls->Add(this->LabelAngle1);
+			this->GroupRotateBox->Location = System::Drawing::Point(922, 539);
 			this->GroupRotateBox->Name = L"GroupRotateBox";
-			this->GroupRotateBox->Size = System::Drawing::Size(242, 117);
+			this->GroupRotateBox->Size = System::Drawing::Size(242, 131);
 			this->GroupRotateBox->TabIndex = 8;
 			this->GroupRotateBox->TabStop = false;
 			this->GroupRotateBox->Text = L"ROTACION";
@@ -415,7 +423,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmRotateButton->FlatAppearance->BorderSize = 3;
 			this->ConfirmRotateButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ConfirmRotateButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ConfirmRotateButton->Location = System::Drawing::Point(22, 72);
+			this->ConfirmRotateButton->Location = System::Drawing::Point(22, 79);
 			this->ConfirmRotateButton->Name = L"ConfirmRotateButton";
 			this->ConfirmRotateButton->Size = System::Drawing::Size(201, 35);
 			this->ConfirmRotateButton->TabIndex = 8;
@@ -423,23 +431,23 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmRotateButton->UseVisualStyleBackColor = false;
 			this->ConfirmRotateButton->Click += gcnew System::EventHandler(this, &Program::ConfirmRotateButton_Click);
 			// 
-			// TextRotatePr
+			// TextRotateCenter
 			// 
-			this->TextRotatePr->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TextRotatePr->Location = System::Drawing::Point(89, 26);
-			this->TextRotatePr->Name = L"TextRotatePr";
-			this->TextRotatePr->Size = System::Drawing::Size(135, 22);
-			this->TextRotatePr->TabIndex = 4;
+			this->TextRotateCenter->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextRotateCenter->Location = System::Drawing::Point(89, 26);
+			this->TextRotateCenter->Name = L"TextRotateCenter";
+			this->TextRotateCenter->Size = System::Drawing::Size(135, 22);
+			this->TextRotateCenter->TabIndex = 4;
 			// 
-			// LabelAngle
+			// LabelAngle1
 			// 
-			this->LabelAngle->AutoSize = true;
-			this->LabelAngle->BackColor = System::Drawing::Color::LightCyan;
-			this->LabelAngle->Location = System::Drawing::Point(19, 30);
-			this->LabelAngle->Name = L"LabelAngle";
-			this->LabelAngle->Size = System::Drawing::Size(59, 16);
-			this->LabelAngle->TabIndex = 1;
-			this->LabelAngle->Text = L"Angulo:";
+			this->LabelAngle1->AutoSize = true;
+			this->LabelAngle1->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelAngle1->Location = System::Drawing::Point(19, 30);
+			this->LabelAngle1->Name = L"LabelAngle1";
+			this->LabelAngle1->Size = System::Drawing::Size(56, 16);
+			this->LabelAngle1->TabIndex = 1;
+			this->LabelAngle1->Text = L"Centro:";
 			// 
 			// ButtonCleanPC
 			// 
@@ -462,7 +470,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelPointAct->BackColor = System::Drawing::Color::Azure;
 			this->LabelPointAct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->LabelPointAct->Location = System::Drawing::Point(919, 21);
+			this->LabelPointAct->Location = System::Drawing::Point(919, 9);
 			this->LabelPointAct->Name = L"LabelPointAct";
 			this->LabelPointAct->Size = System::Drawing::Size(128, 17);
 			this->LabelPointAct->TabIndex = 6;
@@ -477,7 +485,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->groupBox1->Controls->Add(this->ConfirmDesplazarButton);
 			this->groupBox1->Controls->Add(this->TextDespX);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(922, 698);
+			this->groupBox1->Location = System::Drawing::Point(922, 676);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(242, 141);
 			this->groupBox1->TabIndex = 9;
@@ -534,6 +542,24 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label1->Size = System::Drawing::Size(20, 16);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"X:";
+			// 
+			// TextRotateFigure
+			// 
+			this->TextRotateFigure->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextRotateFigure->Location = System::Drawing::Point(89, 54);
+			this->TextRotateFigure->Name = L"TextRotateFigure";
+			this->TextRotateFigure->Size = System::Drawing::Size(135, 22);
+			this->TextRotateFigure->TabIndex = 9;
+			// 
+			// LabelAngle2
+			// 
+			this->LabelAngle2->AutoSize = true;
+			this->LabelAngle2->BackColor = System::Drawing::Color::LightCyan;
+			this->LabelAngle2->Location = System::Drawing::Point(20, 60);
+			this->LabelAngle2->Name = L"LabelAngle2";
+			this->LabelAngle2->Size = System::Drawing::Size(55, 16);
+			this->LabelAngle2->TabIndex = 10;
+			this->LabelAngle2->Text = L"Figura:";
 			// 
 			// Program
 			// 
@@ -694,13 +720,13 @@ namespace TrabajoFuncionesLinealesGrupal {
 		}
 
 		private: System::Void ConfirmRotateButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (TextRotatePr->Text->Trim()->Length == 0) {
+			if (TextRotateCenter->Text->Trim()->Length == 0) {
 				MessageBox::Show(L"Por favor, ingrese un ángulo.", L"Error de Entrada",
 					MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 			try {
-				float angulo = System::Convert::ToSingle(TextRotatePr->Text);
+				float angulo = System::Convert::ToSingle(TextRotateCenter->Text);
 
 				if (System::Math::Abs(angulo) > 360) {
 					MessageBox::Show(L"Ingrese un ángulo entre -360 y 360.",
@@ -708,7 +734,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 					return;
 				}
 
-				ObjControlador->AplicarRotacion(angulo);
+				ObjControlador->AplicarRotacionCentro(angulo);
 				PanelDiagram->Invalidate();
 			}
 			catch (System::FormatException^) {
@@ -717,44 +743,43 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 		}
 
-private: System::Void ConfirmDesplazarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	float dx = 0.0f;
-	float dy = 0.0f;
+		private: System::Void ConfirmDesplazarButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			float dx = 0.0f;
+			float dy = 0.0f;
 
-	if (TextDespX->Text->Trim()->Length > 0) {
-		try { dx = System::Convert::ToSingle(TextDespX->Text); }
-		catch (...) { dx = 0.0f; }
-	}
+			if (TextDespX->Text->Trim()->Length > 0) {
+				try { dx = System::Convert::ToSingle(TextDespX->Text); }
+				catch (...) { dx = 0.0f; }
+			}
 
-	if (TextDespY->Text->Trim()->Length > 0) {
-		try { dy = System::Convert::ToSingle(TextDespY->Text); }
-		catch (...) { dy = 0.0f; }
-	}
+			if (TextDespY->Text->Trim()->Length > 0) {
+				try { dy = System::Convert::ToSingle(TextDespY->Text); }
+				catch (...) { dy = 0.0f; }
+			}
 
-	if (ObjControlador != nullptr) {
-		float futuraX = ObjControlador->PuntoCentralFigura.X + dx;
-		float futuraY = ObjControlador->PuntoCentralFigura.Y - dy;
+			if (ObjControlador != nullptr) {
+				float futuraX = ObjControlador->PuntoCentralFigura.X + dx;
+				float futuraY = ObjControlador->PuntoCentralFigura.Y - dy;
 
-		//Comprobar si excede los 430 píxeles en valor absoluto
-		if (Math::Abs(futuraX) > 430 || Math::Abs(futuraY) > 430) {
+				//Comprobar si excede los 430 píxeles en valor absoluto
+				if (Math::Abs(futuraX) > 430 || Math::Abs(futuraY) > 430) {
 
-			System::Windows::Forms::DialogResult resultado;
-			resultado = MessageBox::Show("La figura se saldría de los límites (430px). ¿Deseas reiniciar al centro?",
-				"Límite excedido",
-				MessageBoxButtons::YesNo,
-				MessageBoxIcon::Warning);
+					System::Windows::Forms::DialogResult resultado;
+					resultado = MessageBox::Show("La figura se saldra de los limites. Deseas reiniciar al centro",
+						"Limite excedido",
+						MessageBoxButtons::YesNo,
+						MessageBoxIcon::Warning);
 
-			if (resultado == System::Windows::Forms::DialogResult::Yes) {
-				// Opción de regresar al inicio usando el método existente
-				ObjControlador->limpiarDibujo();
+					if (resultado == System::Windows::Forms::DialogResult::Yes) {
+						// Opción de regresar al inicio usando el método existente
+						ObjControlador->limpiarDibujo();
+						PanelDiagram->Invalidate();
+					}
+					return;
+				}
+
+				ObjControlador->AplicarDesplazamiento(dx, dy);
 				PanelDiagram->Invalidate();
 			}
-			return;
 		}
-
-		// 3. Si es seguro, desplazar
-		ObjControlador->AplicarDesplazamiento(dx, dy);
-		PanelDiagram->Invalidate();
-	}
-}
 };}
