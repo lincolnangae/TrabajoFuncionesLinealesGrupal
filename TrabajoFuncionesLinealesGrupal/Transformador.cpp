@@ -28,3 +28,13 @@ List<Point>^ Transformador::RotacionFigura(List<Point>^ ListaPuntosFigura, float
     }
     return PuntosTransformados;
 };
+//wea traslacion agregada por fin.... malditos cpps separados de los .h para algo existe el pragma once, ya no hay excusa de que puede haber errores por la doble agregacion crj!
+List<Point>^ Transformador::TraslacionFigura(List<Point>^ ListaPuntosFigura, float deltaX, float deltaY) {
+    List<Point>^ PuntosTransformados = gcnew List<Point>();
+    for each(Point p in ListaPuntosFigura) {
+        float nuevoX = p.X + deltaX;
+        float nuevoY = p.Y + deltaY;
+        PuntosTransformados->Add(Point((int)nuevoX, (int)nuevoY));
+    }
+    return PuntosTransformados;
+};

@@ -2,6 +2,8 @@
 #include "Transformador.h"
 #include "PresetFigure.h"
 
+
+
 void Controlador::SetPuntoCentral(int x, int y) {
     PuntoCentralFigura = Point(x, y);
 }
@@ -34,6 +36,25 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
             puntosDibujo[i] = Point(xPantalla, yPantalla);
         }
         g->DrawPolygon(lapiz, puntosDibujo);
+     ////agregado papu
+        NodoPelicula^ temp = historialCabeza;
+        int opacidad = 100; 
+        while (temp != nullptr) {
+            if (temp->figuraGuardada != nullptr && temp->figuraGuardada->Count > 1) {
+                Pen^ lapizFantasma = gcnew Pen(Color::FromArgb(opacidad, Color::Gray), 2.0f);
+                lapizFantasma->DashStyle = System::Drawing::Drawing2D::DashStyle::Dash;
+
+                array<Point>^ ptsFantasma = gcnew array<Point>(temp->figuraGuardada->Count);
+                for (int i = 0; i < temp->figuraGuardada->Count; i++) {
+                    int fx = dibujoX + temp->figuraGuardada[i].X;
+                    int fy = dibujoY + temp->figuraGuardada[i].Y;
+                    ptsFantasma[i] = Point(fx, fy);
+                }
+                g->DrawPolygon(lapizFantasma, ptsFantasma);
+                opacidad -= 50; 
+            }
+            temp = temp->siguiente;
+        }
     }
     if (reflexXActiva) {
         Pen^ penRefX = gcnew Pen(Color::OrangeRed, 2);
@@ -105,17 +126,52 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
 }
 
 //Funciones de transformacion
+
+
+
+//
+void Controlador::GuardarEnMemoria() {
+    if (listaFigura == nullptr || listaFigura->Count == 0) return;
+
+    // Crear nuevo nodo (Película) al inicio... como sea emmm se que por norma los comentarios van es... nisiquiera se el tipo de palabra pero dare ejemplos... generar, buscar etc etc, bueno la cosa es que... porque? xd parece muy soso
+    NodoPelicula^ nuevoNodo = gcnew NodoPelicula();
+    nuevoNodo->figuraGuardada = gcnew List<Point>(listaFigura);
+    nuevoNodo->siguiente = historialCabeza;
+    historialCabeza = nuevoNodo;
+    cantidadNodos++;
+
+    // Eliminamos el más antiguo si superamos 2 nodos  
+    if (cantidadNodos > 2) {
+        NodoPelicula^ temp = historialCabeza;
+        while (temp != nullptr && temp->siguiente != nullptr && temp->siguiente->siguiente != nullptr) {
+            temp = temp->siguiente;
+        }
+        if (temp != nullptr) {
+            temp->siguiente = nullptr;
+        }
+        cantidadNodos--;
+    }
+}
+
+void Controlador::AplicarDesplazamiento(float deltaX, float deltaY) {
+    if (listaOriginal != nullptr) {
+        GuardarEnMemoria(); 
+        listaOriginal = Transformador::TraslacionFigura(listaOriginal, deltaX, deltaY);
+        listaFigura = Transformador::TraslacionFigura(listaFigura, deltaX, deltaY);
+    }
+}
+
 void Controlador::AplicarEscala(float escala) {
     if (listaOriginal != nullptr) {
+        GuardarEnMemoria(); 
         listaFigura = Transformador::EscalamientoFigura(listaOriginal, escala);
     }
 }
 
 void Controlador::AplicarRotacion(float angulo) {
     if (listaOriginal != nullptr) {
+        GuardarEnMemoria(); 
         anguloAcumulado += angulo;
-        // Primero escalar si hay escala aplicada, luego rotar
-        // Rotamos siempre desde listaOriginal para evitar distorsión acumulada
         listaFigura = Transformador::RotacionFigura(listaOriginal, anguloAcumulado);
     }
 }

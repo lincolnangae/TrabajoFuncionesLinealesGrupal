@@ -4,6 +4,13 @@
 using namespace System::Collections::Generic;
 using namespace System::Drawing;
 
+//no voy a crear un .h para poner solo esta wea.... la dejo por aqui... esto servira para la lista enlazada tipo pelicula
+
+public ref struct NodoPelicula {
+	List<Point>^ figuraGuardada;
+	NodoPelicula^ siguiente;
+};
+
 public ref class Controlador {
 private:
 	List<Point>^ listaOriginal;
@@ -15,6 +22,11 @@ private:
 	bool reflexYActiva;
 	bool reflexOrigenActiva;
 
+	//weas necesarias.... me canse de comentar.... mentira.... solo no quiero explicar xd
+	NodoPelicula^ historialCabeza;
+	int cantidadNodos;
+	void GuardarEnMemoria();
+
 public:
 	Controlador() {
 		listaFigura = gcnew List<Point>(); // Inicializar
@@ -25,11 +37,9 @@ public:
 	}
 	~Controlador() {}
 
-	//Declaracion de funcion
-	void SetPuntoCentral(int x, int y);
-	void SetFigura(System::String^ nombre);
-	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
-	void AplicarRotacion(float angulo);
+	//zgregado 14/05/2026
+	//método de desplazamiento declaradeichon
+	void AplicarDesplazamiento(float deltaX, float deltaY);
 
 	void limpiarDibujo() {
 		PuntoCentralFigura.X = 0;
@@ -39,7 +49,20 @@ public:
 		reflexYActiva = false;
 		reflexOrigenActiva = false;
 		anguloAcumulado = 0.0f;
+		// Limpiar memoria
+		historialCabeza = nullptr;
+		cantidadNodos = 0;
 	}
+
+	//Declaracion de funcion
+	void SetPuntoCentral(int x, int y);
+	void SetFigura(System::String^ nombre);
+	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+	void AplicarRotacion(float angulo);
+
+
+
+
 
 
 	//Funciones de transformacion
@@ -71,6 +94,7 @@ public:
 	bool GetReflexionOrigenActiva() {
 		return reflexOrigenActiva;
 	}
+
 
 	//Aplicacion en Controlador.cpp
 };
