@@ -7,7 +7,6 @@ using namespace System::Drawing;
 List<Point>^ PresetFigure::ObtenerFigura(String^ nombre, Point centro) {
     List<Point>^ puntos = gcnew List<Point>();
 
-    // Extraccion de coordenadas del centro
     int cx = centro.X;
     int cy = centro.Y;
 

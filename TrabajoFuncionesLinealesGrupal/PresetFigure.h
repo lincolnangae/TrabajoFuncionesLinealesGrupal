@@ -10,5 +10,4 @@ public:
     //Declaracion
     static List<Point>^ ObtenerFigura(System::String^ nombre, Point centro);
 
-    //Aplicacion en PresetFigure.cpp
 };

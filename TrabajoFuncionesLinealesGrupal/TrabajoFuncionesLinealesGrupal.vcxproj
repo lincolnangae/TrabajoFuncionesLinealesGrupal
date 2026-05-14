@@ -129,6 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controlador.h" />
+    <ClInclude Include="ListaSimple.h" />
+    <ClInclude Include="Nodo.h" />
     <ClInclude Include="PresetFigure.h" />
     <ClInclude Include="Program.h">
       <FileType>CppForm</FileType>

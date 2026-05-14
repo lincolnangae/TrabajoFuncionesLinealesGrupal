@@ -2,39 +2,107 @@
 #include "Transformador.h"
 using namespace System;
 
-List<Point>^ Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
-    List<Point>^ PuntosTransformados = gcnew List<Point>();
-    for each(Point p in ListaPuntosFigura) {
-        float nuevoX = System::Convert::ToSingle(p.X * Escala);
-        float nuevoY = System::Convert::ToSingle(p.Y * Escala);
-        PuntosTransformados->Add(Point(nuevoX, nuevoY));
+void Transformador::TraslacionFigura(List<Point>^ ListaPuntosFigura, float deltaX, float deltaY) {
+    float Matriz[3][3] = {
+        { 1, 0, deltaX  },
+        { 0, 1, -deltaY },
+        { 0, 0, 1       }
+    };
+
+    // Uso de un for tradicional para poder sobrescribir los valores
+    for (int i = 0; i < ListaPuntosFigura->Count; i++) {
+        float x = (float)ListaPuntosFigura[i].X;
+        float y = (float)ListaPuntosFigura[i].Y;
+
+        int nuevoX = (int)((x * Matriz[0][0]) + (y * Matriz[0][1]) + (1 * Matriz[0][2]));
+        int nuevoY = (int)((x * Matriz[1][0]) + (y * Matriz[1][1]) + (1 * Matriz[1][2]));
+
+        // Se sobrescribe el punto original en la lista
+        ListaPuntosFigura[i] = Point(nuevoX, nuevoY);
     }
-    return PuntosTransformados;
-};
+}
 
+void Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
+    float Matriz[3][3] = {
+        { Escala, 0,      0 },
+        { 0,      Escala, 0 },
+        { 0,      0,      1 }
+    };
 
-List<Point>^ Transformador::RotacionFigura(List<Point>^ ListaPuntosFigura, float anguloDegrees) {
-    List<Point>^ PuntosTransformados = gcnew List<Point>();
+    for (int i = 0; i < ListaPuntosFigura->Count; i++) {
+        float x = (float)ListaPuntosFigura[i].X;
+        float y = (float)ListaPuntosFigura[i].Y;
 
-    // Convertir grados a radianes
+        int nuevoX = (int)(x * Matriz[0][0]);
+        int nuevoY = (int)(y * Matriz[1][1]);
+
+        ListaPuntosFigura[i] = Point(nuevoX, nuevoY);
+    }
+}
+
+void Transformador::RotacionFigura(List<Point>^ ListaPuntosFigura, float anguloDegrees) {
     float rad = anguloDegrees * (float)Math::PI / 180.0f;
     float cosA = (float)Math::Cos(rad);
     float sinA = (float)Math::Sin(rad);
 
-    for each(Point p in ListaPuntosFigura) {
-        float nuevoX = p.X * cosA - p.Y * sinA;
-        float nuevoY = p.X * sinA + p.Y * cosA;
-        PuntosTransformados->Add(Point((int)nuevoX, (int)nuevoY));
+    float Matriz[3][3] = {
+        { cosA, -sinA, 0 },
+        { sinA,  cosA, 0 },
+        { 0,     0,    1 }
+    };
+
+    for (int i = 0; i < ListaPuntosFigura->Count; i++) {
+        float x = (float)ListaPuntosFigura[i].X;
+        float y = (float)ListaPuntosFigura[i].Y;
+
+        int nuevoX = (int)(x * Matriz[0][0] + y * Matriz[0][1]);
+        int nuevoY = (int)(x * Matriz[1][0] + y * Matriz[1][1]);
+
+        ListaPuntosFigura[i] = Point(nuevoX, nuevoY);
     }
-    return PuntosTransformados;
-};
-//wea traslacion agregada por fin.... malditos cpps separados de los .h para algo existe el pragma once, ya no hay excusa de que puede haber errores por la doble agregacion crj!
-List<Point>^ Transformador::TraslacionFigura(List<Point>^ ListaPuntosFigura, float deltaX, float deltaY) {
-    List<Point>^ PuntosTransformados = gcnew List<Point>();
-    for each(Point p in ListaPuntosFigura) {
-        float nuevoX = p.X + deltaX;
-        float nuevoY = p.Y + deltaY;
-        PuntosTransformados->Add(Point((int)nuevoX, (int)nuevoY));
+}
+
+void Transformador::ReflexionX(List<Point>^ ListaPuntos) {
+    //Inversion de la coordenada Y
+    float Matriz[3][3] = {
+        { 1,  0, 0 },
+        { 0, -1, 0 },
+        { 0,  0, 1 }
+    };
+
+    for (int i = 0; i < ListaPuntos->Count; i++) {
+        int nx = (int)(ListaPuntos[i].X * Matriz[0][0]);
+        int ny = (int)(ListaPuntos[i].Y * Matriz[1][1]);
+        ListaPuntos[i] = Point(nx, ny);
     }
-    return PuntosTransformados;
-};
+}
+
+void Transformador::ReflexionY(List<Point>^ ListaPuntos) {
+    //Inversion de la coordenada X
+    float Matriz[3][3] = {
+        { -1, 0, 0 },
+        {  0, 1, 0 },
+        {  0, 0, 1 }
+    };
+
+    for (int i = 0; i < ListaPuntos->Count; i++) {
+        int nx = (int)(ListaPuntos[i].X * Matriz[0][0]);
+        int ny = (int)(ListaPuntos[i].Y * Matriz[1][1]);
+        ListaPuntos[i] = Point(nx, ny);
+    }
+}
+
+void Transformador::ReflexionOrigen(List<Point>^ ListaPuntos) {
+    //Inversion de ambas coordenadas
+    float Matriz[3][3] = {
+        { -1,  0, 0 },
+        {  0, -1, 0 },
+        {  0,  0, 1 }
+    };
+
+    for (int i = 0; i < ListaPuntos->Count; i++) {
+        int nx = (int)(ListaPuntos[i].X * Matriz[0][0]);
+        int ny = (int)(ListaPuntos[i].Y * Matriz[1][1]);
+        ListaPuntos[i] = Point(nx, ny);
+    }
+}
