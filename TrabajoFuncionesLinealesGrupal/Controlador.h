@@ -40,7 +40,7 @@ public:
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
 	void AplicarRotacionCentro(float angulo);
 	void AplicarDesplazamiento(float deltaX, float deltaY);
-	void AplicarEscala(float escala);
+	bool AplicarEscala(float escala);
 	void AplicarReflexionX();
 	void AplicarReflexionY();
 	void AplicarReflexionOrigen();

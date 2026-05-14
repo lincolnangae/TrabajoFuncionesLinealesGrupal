@@ -63,13 +63,27 @@ void Controlador::AplicarDesplazamiento(float deltaX, float deltaY) {
     }
 }
 
-void Controlador::AplicarEscala(float escala) {
+bool Controlador::AplicarEscala(float escala) {
     if (Figuras != nullptr && Figuras->cabeza != nullptr) {
         List<Point>^ ListaTemporalPuntos = gcnew List<Point>(Figuras->cabeza->Dato);
+
         Transformador::EscalamientoFigura(ListaTemporalPuntos, escala);
+
+        int limitePantalla = 430;
+
+        for (int i = 0; i < ListaTemporalPuntos->Count; i++) {
+            if (System::Math::Abs(ListaTemporalPuntos[i].X) > limitePantalla ||
+                System::Math::Abs(ListaTemporalPuntos[i].Y) > limitePantalla) {
+                return false;
+            }
+        }
+
+        PuntoCentralFigura.X = (int)(PuntoCentralFigura.X * escala);
+        PuntoCentralFigura.Y = (int)(PuntoCentralFigura.Y * escala);
 
         Figuras->AgregarALista(gcnew Nodo<List<Point>^>(ListaTemporalPuntos));
     }
+    return true;
 }
 
 void Controlador::AplicarRotacionCentro(float angulo) {

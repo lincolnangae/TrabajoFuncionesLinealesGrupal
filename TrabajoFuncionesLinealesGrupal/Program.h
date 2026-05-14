@@ -706,7 +706,14 @@ namespace TrabajoFuncionesLinealesGrupal {
 					return;
 				}
 
+				if (!ObjControlador->AplicarEscala(scale)) {
+					MessageBox::Show("La escala excede los limites de la pantalla.", "Limite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				}
+
 				ObjControlador->AplicarEscala(scale);
+
+
+
 				PanelDiagram->Invalidate();
 
 			}
