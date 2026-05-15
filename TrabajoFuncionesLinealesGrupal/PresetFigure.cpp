@@ -46,6 +46,14 @@ List<Point>^ PresetFigure::ObtenerFigura(String^ nombre, Point centro) {
         puntos->Add(Point(cx + 30, cy));
         puntos->Add(Point(cx, cy + 50));
         puntos->Add(Point(cx - 30, cy));
+    }//FIGURA AGREGADA 
+    else if (nombre == "Hexagono") {
+        puntos->Add(Point(cx, cy - 45));
+        puntos->Add(Point(cx + 40, cy - 20));
+        puntos->Add(Point(cx + 40, cy + 20));
+        puntos->Add(Point(cx, cy + 45));
+        puntos->Add(Point(cx - 40, cy + 20));
+        puntos->Add(Point(cx - 40, cy - 20));
     }
     return puntos;
 }
