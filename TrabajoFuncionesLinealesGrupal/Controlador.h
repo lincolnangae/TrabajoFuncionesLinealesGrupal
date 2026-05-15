@@ -10,10 +10,12 @@ public ref class Controlador {
 public:
 	ListaSimple <List<Point>^>^ Figuras;
 	Point PuntoCentralFigura;
-	float anguloAcumulado;
+	float anguloAcumuladoC;
+	float anguloAcumuladoF;
 
 	Controlador() {
-		anguloAcumulado = 0.0f;
+		anguloAcumuladoC = 0.0f;
+		anguloAcumuladoF = 0.0f;
 		Figuras = gcnew ListaSimple<List<Point>^>();
 	}
 	~Controlador() {
@@ -23,7 +25,8 @@ public:
 	void limpiarDibujo() {
 		PuntoCentralFigura.X = 0;
 		PuntoCentralFigura.Y = 0;
-		anguloAcumulado = 0.0f;
+		anguloAcumuladoC = 0.0f;
+		anguloAcumuladoF = 0.0f;
 		Figuras->cabeza = nullptr;
 		// Limpiar memoria
 	}
@@ -38,6 +41,7 @@ public:
 	void SetPuntoCentral(int x, int y);
 	void SetFigura(System::String^ nombre);
 	void DibujarTodo(System::Drawing::Graphics^ g, int cX, int cY);
+	void AplicarRotacionFigura(float angulo);
 	void AplicarRotacionCentro(float angulo);
 	void AplicarDesplazamiento(float deltaX, float deltaY);
 	bool AplicarEscala(float escala);

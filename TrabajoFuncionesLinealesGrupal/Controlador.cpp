@@ -7,7 +7,6 @@ void Controlador::SetPuntoCentral(int x, int y) {
 }
 
 void Controlador::SetFigura(System::String^ nombre) {
-    Figuras->cabeza = nullptr;
     List<Point>^ puntos = PresetFigure::ObtenerFigura(nombre, PuntoCentralFigura);
 
     Nodo<List<Point>^>^ nuevaFigura = gcnew Nodo<List<Point>^>(puntos);
@@ -15,13 +14,11 @@ void Controlador::SetFigura(System::String^ nombre) {
 }
 
 void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
-    // Dibujo del origen absoluto del plano (0,0) en color Azul
+    // Dibujo del origen absoluto del plano
     g->FillEllipse(gcnew SolidBrush(Color::Blue), cX - 3, cY - 3, 6, 6);
 
-    // Dibujo del punto central de la figura (marcador Rojo)
     int centroPantallaX = cX + PuntoCentralFigura.X;
-    int centroPantallaY = cY - PuntoCentralFigura.Y; // Resta para invertir eje Y
-    g->FillEllipse(gcnew SolidBrush(Color::Red), centroPantallaX - 3, centroPantallaY - 3, 6, 6);
+    int centroPantallaY = cY - PuntoCentralFigura.Y;
 
     if (Figuras != nullptr && Figuras->cabeza != nullptr) {
         Nodo<List<Point>^>^ temp = Figuras->cabeza;
@@ -30,7 +27,7 @@ void Controlador::DibujarTodo(Graphics^ g, int cX, int cY) {
         while (temp != nullptr) {
             List<Point>^ puntos = temp->Dato;
 
-            Color colorFigura = (contador == 0) ? Color::Black : Color::LightGray;
+            Color colorFigura = (contador == 0) ? Color::Black : Color::DarkRed;
             float anchoLapiz = (contador == 0) ? 3.0f : 2.0f;
             Pen^ lapiz = gcnew Pen(colorFigura, anchoLapiz);
 
@@ -89,7 +86,7 @@ bool Controlador::AplicarEscala(float escala) {
 void Controlador::AplicarRotacionCentro(float angulo) {
     if (Figuras != nullptr && Figuras->cabeza != nullptr) {
         List<Point>^ ListaTemporalPuntos = gcnew List<Point>(Figuras->cabeza->Dato);
-        Transformador::RotacionFigura(ListaTemporalPuntos, angulo);
+        Transformador::RotacionSobreCentro(ListaTemporalPuntos, angulo);
 
         // Rotar el punto central alrededor del origen (0,0)
         float rad = angulo * (float)Math::PI / 180.0f;
@@ -99,7 +96,17 @@ void Controlador::AplicarRotacionCentro(float angulo) {
         int ny = (int)(PuntoCentralFigura.X * sinA + PuntoCentralFigura.Y * cosA);
         PuntoCentralFigura = Point(nx, ny);
 
-        anguloAcumulado += angulo;
+        anguloAcumuladoC += angulo;
+        Figuras->AgregarALista(gcnew Nodo<List<Point>^>(ListaTemporalPuntos));
+    }
+}
+
+void Controlador::AplicarRotacionFigura(float angulo) {
+    if (Figuras != nullptr && Figuras->cabeza != nullptr) {
+        List<Point>^ ListaTemporalPuntos = gcnew List<Point>(Figuras->cabeza->Dato);
+        Transformador::RotacionSobreFigura(ListaTemporalPuntos, angulo , PuntoCentralFigura);
+
+        anguloAcumuladoF += angulo;
         Figuras->AgregarALista(gcnew Nodo<List<Point>^>(ListaTemporalPuntos));
     }
 }

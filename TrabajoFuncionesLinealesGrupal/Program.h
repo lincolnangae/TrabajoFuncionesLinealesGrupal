@@ -82,8 +82,10 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 	private: System::Windows::Forms::Button^ ConfirmScaleButton;
 	private: System::Windows::Forms::GroupBox^ GroupRotateBox;
-	private: System::Windows::Forms::Button^ ConfirmRotateButton;
-	private: System::Windows::Forms::TextBox^ TextRotateCenter;
+	private: System::Windows::Forms::Button^ ConfirmRoCButton;
+	private: System::Windows::Forms::TextBox^ TextRotate;
+
+
 	private: System::Windows::Forms::Label^ LabelAngle1;
 
 
@@ -98,8 +100,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 	private: System::Windows::Forms::TextBox^ TextDespY;
 
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ LabelAngle2;
-	private: System::Windows::Forms::TextBox^ TextRotateFigure;
+	private: System::Windows::Forms::Button^ ConfirmRoFButton;
+
+
 
 
 
@@ -155,8 +158,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->TextScale = (gcnew System::Windows::Forms::TextBox());
 			this->LabelScaled = (gcnew System::Windows::Forms::Label());
 			this->GroupRotateBox = (gcnew System::Windows::Forms::GroupBox());
-			this->ConfirmRotateButton = (gcnew System::Windows::Forms::Button());
-			this->TextRotateCenter = (gcnew System::Windows::Forms::TextBox());
+			this->ConfirmRoFButton = (gcnew System::Windows::Forms::Button());
+			this->ConfirmRoCButton = (gcnew System::Windows::Forms::Button());
+			this->TextRotate = (gcnew System::Windows::Forms::TextBox());
 			this->LabelAngle1 = (gcnew System::Windows::Forms::Label());
 			this->ButtonCleanPC = (gcnew System::Windows::Forms::Button());
 			this->LabelPointAct = (gcnew System::Windows::Forms::Label());
@@ -166,8 +170,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->ConfirmDesplazarButton = (gcnew System::Windows::Forms::Button());
 			this->TextDespX = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->TextRotateFigure = (gcnew System::Windows::Forms::TextBox());
-			this->LabelAngle2 = (gcnew System::Windows::Forms::Label());
 			this->GroupCoordBox->SuspendLayout();
 			this->GroupFigureBox->SuspendLayout();
 			this->GroupReflexBox->SuspendLayout();
@@ -404,40 +406,54 @@ namespace TrabajoFuncionesLinealesGrupal {
 			// 
 			this->GroupRotateBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GroupRotateBox.BackgroundImage")));
 			this->GroupRotateBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->GroupRotateBox->Controls->Add(this->LabelAngle2);
-			this->GroupRotateBox->Controls->Add(this->TextRotateFigure);
-			this->GroupRotateBox->Controls->Add(this->ConfirmRotateButton);
-			this->GroupRotateBox->Controls->Add(this->TextRotateCenter);
+			this->GroupRotateBox->Controls->Add(this->ConfirmRoFButton);
+			this->GroupRotateBox->Controls->Add(this->ConfirmRoCButton);
+			this->GroupRotateBox->Controls->Add(this->TextRotate);
 			this->GroupRotateBox->Controls->Add(this->LabelAngle1);
 			this->GroupRotateBox->Location = System::Drawing::Point(922, 539);
 			this->GroupRotateBox->Name = L"GroupRotateBox";
-			this->GroupRotateBox->Size = System::Drawing::Size(242, 131);
+			this->GroupRotateBox->Size = System::Drawing::Size(242, 153);
 			this->GroupRotateBox->TabIndex = 8;
 			this->GroupRotateBox->TabStop = false;
 			this->GroupRotateBox->Text = L"ROTACION";
 			// 
-			// ConfirmRotateButton
+			// ConfirmRoFButton
 			// 
-			this->ConfirmRotateButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->ConfirmRotateButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmRotateButton.BackgroundImage")));
-			this->ConfirmRotateButton->FlatAppearance->BorderSize = 3;
-			this->ConfirmRotateButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ConfirmRotateButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->ConfirmRotateButton->Location = System::Drawing::Point(22, 79);
-			this->ConfirmRotateButton->Name = L"ConfirmRotateButton";
-			this->ConfirmRotateButton->Size = System::Drawing::Size(201, 35);
-			this->ConfirmRotateButton->TabIndex = 8;
-			this->ConfirmRotateButton->Text = L"Aceptar";
-			this->ConfirmRotateButton->UseVisualStyleBackColor = false;
-			this->ConfirmRotateButton->Click += gcnew System::EventHandler(this, &Program::ConfirmRotateButton_Click);
+			this->ConfirmRoFButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ConfirmRoFButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmRoFButton.BackgroundImage")));
+			this->ConfirmRoFButton->FlatAppearance->BorderSize = 3;
+			this->ConfirmRoFButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ConfirmRoFButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ConfirmRoFButton->Location = System::Drawing::Point(21, 59);
+			this->ConfirmRoFButton->Name = L"ConfirmRoFButton";
+			this->ConfirmRoFButton->Size = System::Drawing::Size(201, 35);
+			this->ConfirmRoFButton->TabIndex = 9;
+			this->ConfirmRoFButton->Text = L"Figura";
+			this->ConfirmRoFButton->UseVisualStyleBackColor = false;
+			this->ConfirmRoFButton->Click += gcnew System::EventHandler(this, &Program::ConfirmRoFButton_Click);
 			// 
-			// TextRotateCenter
+			// ConfirmRoCButton
 			// 
-			this->TextRotateCenter->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TextRotateCenter->Location = System::Drawing::Point(89, 26);
-			this->TextRotateCenter->Name = L"TextRotateCenter";
-			this->TextRotateCenter->Size = System::Drawing::Size(135, 22);
-			this->TextRotateCenter->TabIndex = 4;
+			this->ConfirmRoCButton->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->ConfirmRoCButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmRoCButton.BackgroundImage")));
+			this->ConfirmRoCButton->FlatAppearance->BorderSize = 3;
+			this->ConfirmRoCButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ConfirmRoCButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->ConfirmRoCButton->Location = System::Drawing::Point(22, 103);
+			this->ConfirmRoCButton->Name = L"ConfirmRoCButton";
+			this->ConfirmRoCButton->Size = System::Drawing::Size(201, 35);
+			this->ConfirmRoCButton->TabIndex = 8;
+			this->ConfirmRoCButton->Text = L"Centro";
+			this->ConfirmRoCButton->UseVisualStyleBackColor = false;
+			this->ConfirmRoCButton->Click += gcnew System::EventHandler(this, &Program::ConfirmRoCButton_Click);
+			// 
+			// TextRotate
+			// 
+			this->TextRotate->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TextRotate->Location = System::Drawing::Point(89, 26);
+			this->TextRotate->Name = L"TextRotate";
+			this->TextRotate->Size = System::Drawing::Size(135, 22);
+			this->TextRotate->TabIndex = 4;
 			// 
 			// LabelAngle1
 			// 
@@ -445,9 +461,9 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->LabelAngle1->BackColor = System::Drawing::Color::LightCyan;
 			this->LabelAngle1->Location = System::Drawing::Point(19, 30);
 			this->LabelAngle1->Name = L"LabelAngle1";
-			this->LabelAngle1->Size = System::Drawing::Size(56, 16);
+			this->LabelAngle1->Size = System::Drawing::Size(44, 16);
 			this->LabelAngle1->TabIndex = 1;
-			this->LabelAngle1->Text = L"Centro:";
+			this->LabelAngle1->Text = L"Dato:";
 			// 
 			// ButtonCleanPC
 			// 
@@ -485,7 +501,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->groupBox1->Controls->Add(this->ConfirmDesplazarButton);
 			this->groupBox1->Controls->Add(this->TextDespX);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(922, 676);
+			this->groupBox1->Location = System::Drawing::Point(922, 698);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(242, 141);
 			this->groupBox1->TabIndex = 9;
@@ -543,24 +559,6 @@ namespace TrabajoFuncionesLinealesGrupal {
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"X:";
 			// 
-			// TextRotateFigure
-			// 
-			this->TextRotateFigure->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TextRotateFigure->Location = System::Drawing::Point(89, 54);
-			this->TextRotateFigure->Name = L"TextRotateFigure";
-			this->TextRotateFigure->Size = System::Drawing::Size(135, 22);
-			this->TextRotateFigure->TabIndex = 9;
-			// 
-			// LabelAngle2
-			// 
-			this->LabelAngle2->AutoSize = true;
-			this->LabelAngle2->BackColor = System::Drawing::Color::LightCyan;
-			this->LabelAngle2->Location = System::Drawing::Point(20, 60);
-			this->LabelAngle2->Name = L"LabelAngle2";
-			this->LabelAngle2->Size = System::Drawing::Size(55, 16);
-			this->LabelAngle2->TabIndex = 10;
-			this->LabelAngle2->Text = L"Figura:";
-			// 
 			// Program
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
@@ -615,7 +613,7 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 				if (Math::Abs(x) > limite || Math::Abs(y) > limite) {
 					MessageBox::Show(L"Coordenada fuera de rango.\nIngrese valores entre -" + limite + L" y " + limite + L".",
-						L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						L"Limite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
 					return;
 				}
 
@@ -628,10 +626,10 @@ namespace TrabajoFuncionesLinealesGrupal {
 			}
 			//Errores posibles al poner una coordenada
 			catch (System::FormatException^) {
-				MessageBox::Show(L"Entrada no válida. Por favor, use solo números enteros.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(L"Entrada no valida. Por favor, use solo numeros enteros.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			catch (System::OverflowException^) {
-				MessageBox::Show(L"El número ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(L"El numero ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -698,11 +696,11 @@ namespace TrabajoFuncionesLinealesGrupal {
 
 			try {
 				float scale = System::Convert::ToSingle(TextScale->Text);
-				int limite = 8;
+				int limite = 2;
 
 				if (Math::Abs(scale) > limite) {
 					MessageBox::Show(L"Coordenada fuera de rango.\nIngrese valores entre -" + limite + L" y " + limite + L".",
-						L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						L"Limite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
 					return;
 				}
 
@@ -722,18 +720,18 @@ namespace TrabajoFuncionesLinealesGrupal {
 				MessageBox::Show(L"Entrada no válida. Por favor, use solo números enteros.", L"Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			catch (System::OverflowException^) {
-				MessageBox::Show(L"El número ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(L"El numero ingresado es demasiado grande.", L"Error de Capacidad", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
-		private: System::Void ConfirmRotateButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (TextRotateCenter->Text->Trim()->Length == 0) {
-				MessageBox::Show(L"Por favor, ingrese un ángulo.", L"Error de Entrada",
+		private: System::Void ConfirmRoCButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (TextRotate->Text->Trim()->Length == 0) {
+				MessageBox::Show(L"Por favor, ingrese un angulo.", L"Error de Entrada",
 					MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 			try {
-				float angulo = System::Convert::ToSingle(TextRotateCenter->Text);
+				float angulo = System::Convert::ToSingle(TextRotate->Text);
 
 				if (System::Math::Abs(angulo) > 360) {
 					MessageBox::Show(L"Ingrese un ángulo entre -360 y 360.",
@@ -749,6 +747,31 @@ namespace TrabajoFuncionesLinealesGrupal {
 					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
+
+		private: System::Void ConfirmRoFButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (TextRotate->Text->Trim()->Length == 0) {
+				MessageBox::Show(L"Por favor, ingrese un ángulo.", L"Error de Entrada",
+					MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			try {
+				float angulo = System::Convert::ToSingle(TextRotate->Text);
+
+				if (System::Math::Abs(angulo) > 360) {
+					MessageBox::Show(L"Ingrese un ángulo entre -360 y 360.",
+						L"Límite Excedido", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+
+				ObjControlador->AplicarRotacionFigura(angulo);
+				PanelDiagram->Invalidate();
+			}
+			catch (System::FormatException^) {
+				MessageBox::Show(L"Entrada no válida. Use números.", L"Error de Formato",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+
 
 		private: System::Void ConfirmDesplazarButton_Click(System::Object^ sender, System::EventArgs^ e) {
 			float dx = 0.0f;
@@ -789,4 +812,5 @@ namespace TrabajoFuncionesLinealesGrupal {
 				PanelDiagram->Invalidate();
 			}
 		}
+
 };}
