@@ -23,10 +23,9 @@ void Transformador::TraslacionFigura(List<Point>^ ListaPuntosFigura, float delta
 }
 
 void Transformador::EscalamientoFigura(List<Point>^ ListaPuntosFigura, float Escala) {
-    float Matriz[3][3] = {
-        { Escala, 0,      0 },
-        { 0,      Escala, 0 },
-        { 0,      0,      1 }
+    float Matriz[2][2] = {
+        { Escala, 0,    },
+        { 0,      Escala}
     };
 
     for (int i = 0; i < ListaPuntosFigura->Count; i++) {
@@ -45,10 +44,9 @@ void Transformador::RotacionSobreCentro(List<Point>^ ListaPuntosFigura, float an
     float cosA = (float)Math::Cos(rad);
     float sinA = (float)Math::Sin(rad);
 
-    float Matriz[3][3] = {
-        { cosA, -sinA, 0 },
-        { sinA,  cosA, 0 },
-        { 0,     0,    1 }
+    float Matriz[2][2] = {
+        { cosA, -sinA},
+        { sinA,  cosA}
     };
 
     for (int i = 0; i < ListaPuntosFigura->Count; i++) {
@@ -90,10 +88,9 @@ void Transformador::RotacionSobreFigura(List<Point>^ ListaPuntosFigura, float an
 
 void Transformador::ReflexionX(List<Point>^ ListaPuntos) {
     //Inversion de la coordenada Y
-    float Matriz[3][3] = {
-        { 1,  0, 0 },
-        { 0, -1, 0 },
-        { 0,  0, 1 }
+    float Matriz[2][2] = {
+        { 1,  0},
+        { 0, -1}
     };
 
     for (int i = 0; i < ListaPuntos->Count; i++) {
@@ -105,10 +102,9 @@ void Transformador::ReflexionX(List<Point>^ ListaPuntos) {
 
 void Transformador::ReflexionY(List<Point>^ ListaPuntos) {
     //Inversion de la coordenada X
-    float Matriz[3][3] = {
-        { -1, 0, 0 },
-        {  0, 1, 0 },
-        {  0, 0, 1 }
+    float Matriz[2][2] = {
+        { -1, 0},
+        {  0, 1}
     };
 
     for (int i = 0; i < ListaPuntos->Count; i++) {
@@ -121,9 +117,8 @@ void Transformador::ReflexionY(List<Point>^ ListaPuntos) {
 void Transformador::ReflexionOrigen(List<Point>^ ListaPuntos) {
     //Inversion de ambas coordenadas
     float Matriz[3][3] = {
-        { -1,  0, 0 },
-        {  0, -1, 0 },
-        {  0,  0, 1 }
+        { -1,  0},
+        {  0, -1}
     };
 
     for (int i = 0; i < ListaPuntos->Count; i++) {
