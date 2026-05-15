@@ -18,7 +18,7 @@ public:
 
     ListaSimple() {
         cantidadAct = 0;
-        cantidadMax = 3;
+        cantidadMax = 2;
         cabeza = nullptr;
     }
 

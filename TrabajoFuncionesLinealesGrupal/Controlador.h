@@ -28,6 +28,7 @@ public:
 		anguloAcumuladoC = 0.0f;
 		anguloAcumuladoF = 0.0f;
 		Figuras->cabeza = nullptr;
+		Figuras = gcnew ListaSimple<List<Point>^>();
 		// Limpiar memoria
 	}
 
